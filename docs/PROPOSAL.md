@@ -6,10 +6,6 @@ This is an example. Replace the information here with your project proposal.
 
 The goal for this project is to simulate a pet with needs that you care for.
 
-Our focus will be on the student faculty relationship as it pertains to advising.
-
-Student and faculty users will have separate views and menu options.
-
 ### Key Features
 
 * Pet Customization
