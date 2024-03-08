@@ -8,10 +8,10 @@
 #define B COLOR_BLUE
 #define W COLOR_WHITE
 
-//takes text and desired color as an argument and outputs colored text (Input text will have an endl attached once printed)
+//takes text and desired color (R,Y,G,B) as arguments and outputs colored text (Input text will have an endl attached once printed)
 void color_text(std::string my_text, char my_color) {
     std::string colored_string, colored_set;
-    
+
     switch(my_color) {
         case 'R':
             colored_set = R; // Sets text to red
