@@ -1,4 +1,4 @@
-SRCS = src/library.cpp
+SRCS = src/library.cpp src/test_driver.cpp src/library.h 
 EXE = a.out
 SUBMITTY_CXXFLAGS = -I.
 
@@ -12,30 +12,26 @@ endif
 
 # Everything below that should not have to change ever.
 CXX = g++
-
-TARGET = all 
-
-OBJS = $(SRCS:.cpp=.o)
-
 CXXFLAGS = -g -std=c++17 -Wall $(SUBMITTY_CXXFLAGS)
-
-LDFLAGS = -g 
+LDFLAGS = -g
 LIBS =
-
+OBJS = $(SRCS:.cpp=.o)
 SHELL = /bin/bash
+TARGET = all
+
+all: run
 
 $(EXE): $(OBJS)
 	$(CXX) -o $(EXE) $(OBJS) $(LDFLAGS) $(LIBS)
 
 .SUFFIXES: .cpp
-
-.cpp.o:  
+.cpp.o:
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-all : $(EXE)
+compile: $(EXE)
+
+run: compile
+	./$(EXE) $(ARGS)
 
 clean:
-	-rm -f $(OBJS)
-	-rm -f *.o
-	-rm -f $(EXE)
-	
+	-rm -f $(OBJS) $(EXE) solutions.txt
