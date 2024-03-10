@@ -1,8 +1,8 @@
 #pragma once
 
+#include <cstdlib>
 #include <iostream>
 #include <string>
-#include <cstdlib>
 
 class Pet {
 protected:
@@ -14,10 +14,8 @@ public:
   std::string displayPet() const { return petType; }
   virtual void displayAsciiArt() const = 0;
   virtual void interact() const = 0;
-  virtual void feed(Bars& bars) const = 0;
+  virtual void feed(Bars &bars) const = 0;
 };
-
-
 
 class Dog : public Pet {
 public:

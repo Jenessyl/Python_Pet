@@ -2,9 +2,9 @@
 #include <iostream>
 #include <string>
 
-//int main() {
-//  std::cout << "Choose a pet:" << std::endl;
-//  std::cout << "a) Cat\nb) Dog\nc) Frog\n\n";
+// int main() {
+//   std::cout << "Choose a pet:" << std::endl;
+//   std::cout << "a) Cat\nb) Dog\nc) Frog\n\n";
 
 //  char choices;
 //  std::cin >> choices;
@@ -49,7 +49,6 @@
 
 #include "-PetDisplay.h"
 
-void displayPetInfo(const Pet& pet) {
-    std::cout << "Pet Type: " << pet.displayPet() << std::endl;
+void displayPetInfo(const Pet &pet) {
+  std::cout << "Pet Type: " << pet.displayPet() << std::endl;
 }
-

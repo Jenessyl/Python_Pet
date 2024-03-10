@@ -1,8 +1,8 @@
 /**
  * Project III: Start here.
  */
-#include "library.h"
 #include "library.cpp"
+#include "library.h"
 #include <iostream>
 
 int main() {
