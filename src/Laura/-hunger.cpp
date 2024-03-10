@@ -5,7 +5,7 @@
 //hunger or feed function for pets
 
 
-void feedPet(Pet& pet, Bars& bars) {
+void feed(Pet& pet, Bars& bars) {
     std::cout << "Would you like to feed your pet? (yes/no): ";
     std::string feedChoice;
     std::cin >> feedChoice;
