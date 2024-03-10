@@ -1,4 +1,4 @@
-SRCS = src/library.cpp
+SRCS = src/library.cpp src/game.cpp src/person.cpp
 EXE = a.out
 SUBMITTY_CXXFLAGS = -I.
 
