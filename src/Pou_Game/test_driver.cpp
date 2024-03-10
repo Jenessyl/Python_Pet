@@ -2,6 +2,7 @@
  * Project III: Start testing here.
  */
 #include "library.h"
+#include "library.cpp"
 #include <assert.h>
 #include <string>
 

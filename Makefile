@@ -1,4 +1,5 @@
 SRCS = src/library.cpp src/game.cpp src/person.cpp
+SRCS = src/library.cpp src/test_driver.cpp src/library.h 
 EXE = a.out
 SUBMITTY_CXXFLAGS = -I.
 
