@@ -14,7 +14,7 @@ public:
 
     void displayPet() const {
         std::cout << "" << petType << std::endl;
-    }
+    }        
     virtual void displayAsciiArt() const = 0;
     virtual void interact() const = 0;
     virtual void feed() const = 0;
@@ -26,16 +26,29 @@ public:
     Cat() : Pet("Cat") {}
 
     void displayAsciiArt() const override {
+        static bool frameToggle = true;
+        if (frameToggle) {
         // Displaying cat ASCII art!
         std::cout << "    /\\_____/\\   \n"
-                     "   /  o   o  \\   meow meow \n"
-                     "  ( ==  ^  == )\n"
-                     "   )         (\n"
-                     "  (           ) \n"
-                     " ( (  )   (  ) ) \n"
-                     "(__(__)___(__)__) \n";
-    }
+                     "   /  o   o  \\   meow  \n"
+                     "  ( ==  y  == )  _\n"
+                     "   )         (  ( (\n"
+                     "  (           )  ) ) \n"
+                     " ( (  )   (  ) )  ( \n"
+                     "(__(__)___(__)__)  )\n";
+        } else {
+        std::cout << "    /\\_____/\\   \n"
+                     "   /  o   o  \\  \n"
+                     "  ( ==  v  == )   _\n"
+                     "   )         (   ) )\n"
+                     "  (           ) ( ( \n"
+                     " ( (  )   (  ) )   ) \n"
+                     "(__(__)___(__)__) (\n";
+        }        
 
+        frameToggle = !frameToggle; //toggles frames
+
+    }
     void interact() const override {
         std::cout << "You picked a cat! Would you like to feed your pet? (yes/no): ";
     }
@@ -45,7 +58,9 @@ public:
     }
 };
 
-
+void clearScreen() {
+    std::cout << "\033[2J\033[H";
+}
 
 class Dog : public Pet {
 public:
@@ -65,7 +80,7 @@ public:
                      "(_/(____/___(_____/           ";
 
         } else {
-            std::cout <<  "        /  \\          \n"
+        std::cout << "        /  \\          \n"
                      "       / ..|\\    woof         \n"
                      "      (_\\  |_)          _   \n"
                      "      | \\@'------___ ((| |))   \n"
@@ -89,9 +104,7 @@ public:
     }
 };
 
-void clearScreen() {
-    std::cout << "\033[2J\033[H";
-}
+
 
 class Frog : public Pet {
 public: 

@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 
 class Pet {
 protected:
@@ -24,6 +25,8 @@ public:
     Cat() : Pet("Cat") {}
 
     void displayAsciiArt() const override {
+
+        
         // Displaying cat ASCII art!
         std::cout << "    /\\_____/\\   \n"
                      "   /  o   o  \\   meow meow \n"
@@ -74,6 +77,7 @@ public:
     Frog() : Pet("Frog") {}
 
     void displayAsciiArt() const override {
+        std::system("Color 0A");
         //Frog art!!
         std::cout << "         _   _    ribbit ribbit   \n"
                      "        (.)_(.)       \n"
