@@ -1,6 +1,6 @@
 #include "-hunger.h"
-#include "bars.h"
-#include "main.cpp"
+#include "../lisbette/bars.h"
+#include "../lisbette/main.cpp"
 
 //hunger or feed function for pets
 
