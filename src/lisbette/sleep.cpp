@@ -20,7 +20,7 @@ void sleep(std::string pet) {
     sleepProgress += 25;
     std::cout << "Sleeping... Progress: " << sleepProgress << "%" << std::endl;
   }
-  std::cout << "\n" << pet << " woke up!" << std::endl;
+//   std::cout << "\n" << pet << " woke up!" << std::endl;
 
   // chooses a random integer from 1-4 that corresponds to sleep activity
   int randomNumber;
@@ -29,19 +29,19 @@ void sleep(std::string pet) {
 
   switch (randomNumber) {
   case 0:
-    std::cout << "Your pet had a great night of sleep." << std::endl;
+    std::cout << "\n" <<  pet << " had a great night of sleep." << std::endl;
     // adjust bars
     break;
   case 1:
-    std::cout << "Your pet is feeling well rested." << std::endl;
+    std::cout << "\n" << pet << " is feeling well rested." << std::endl;
     // adjust bars
     break;
   case 2:
-    std::cout << "Your pet is feeling sick. Oh no!" << std::endl;
+    std::cout << "\n" << pet << " is feeling sick. Oh no!" << std::endl;
     // adjust bars
     break;
   case 3:
-    std::cout << "Your pet was tossing & turning all night." << std::endl;
+    std::cout << "\n" << pet << " was tossing & turning all night." << std::endl;
     // adjust bars
     break;
   }
