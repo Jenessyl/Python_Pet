@@ -1,7 +1,6 @@
 #include <iostream> 
 #include <stdlib.h> 
 #include "color_function.cpp"
-using namespace std; 
   
 // Driver Code 
 int main() 
