@@ -1,16 +1,16 @@
 #include "sleep.h"
 #include <chrono>
 #include <cstdlib>
+#include <ctime>
 #include <iostream>
 #include <ostream>
 #include <thread>
-#include <ctime>
 
 // Puts the pet to sleep and provides updates while the pet sleeps. parameter
 // should be pet object, for now its a string
 
 void sleep(std::string pet) {
-  std::cout << "Goodnight! Your pet is going to bed.\n" << std::endl;
+  std::cout << "\nGoodnight! " << pet << " is going to bed.\n" << std::endl;
 
   //   include the sleeping sprite
 
@@ -20,16 +20,16 @@ void sleep(std::string pet) {
     sleepProgress += 25;
     std::cout << "Sleeping... Progress: " << sleepProgress << "%" << std::endl;
   }
-//   std::cout << "\n" << pet << " woke up!" << std::endl;
+  std::cout << "\n" << pet << " woke up!" << std::endl;
 
   // chooses a random integer from 1-4 that corresponds to sleep activity
   int randomNumber;
-  srand(time(NULL));
-  randomNumber = (rand() %5);
+  //   srand(time(NULL));
+  randomNumber = (rand() % 5);
 
   switch (randomNumber) {
   case 0:
-    std::cout << "\n" <<  pet << " had a great night of sleep." << std::endl;
+    std::cout << "\n" << pet << " had a great night of sleep." << std::endl;
     // adjust bars
     break;
   case 1:
@@ -41,7 +41,8 @@ void sleep(std::string pet) {
     // adjust bars
     break;
   case 3:
-    std::cout << "\n" << pet << " was tossing & turning all night." << std::endl;
+    std::cout << "\n"
+              << pet << " was tossing & turning all night." << std::endl;
     // adjust bars
     break;
   }
@@ -62,8 +63,17 @@ void sleep(std::string pet) {
 // increase affection
 
 int main() {
-  int randomNumber;
-  std::string pet = "Pou";
-  sleep(pet);
+  std::string name1 = "POU";
+  sleep(name1);
+
+  std::string name2 = "Sally";
+  sleep(name2);
+
+  std::string name3 = "adsd";
+  sleep(name3);
+
+  std::string name4 = "SDASDSADS";
+  sleep(name4);
+
   return 0;
 }

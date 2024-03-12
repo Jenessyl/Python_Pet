@@ -1,6 +1,6 @@
 #pragma once
 
 #include "-Pet.h"
-#include "bars.h"
+#include "../lisbette/bars.h"
 
 void feedPet(Pet &pet, Bars &bars);

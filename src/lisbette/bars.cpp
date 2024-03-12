@@ -1,6 +1,7 @@
 #include "bars.h"
 #include <iostream>
 
+// constructor that initializes the bars to the starting amount of points
 Bars::Bars(int health, int happiness, int hunger, int sleep, int hygiene) {
   this->health = health;
   this->happiness = happiness;
@@ -8,6 +9,12 @@ Bars::Bars(int health, int happiness, int hunger, int sleep, int hygiene) {
   this->sleep = sleep;
   this->hygiene = hygiene;
 }
+
+void Bars::setHealth(int health) { this->health = health; }
+void Bars::setHappiness(int happiness) { this->happiness = happiness; }
+void Bars::setHunger(int hunger) { this->hunger = hunger; }
+void Bars::setSleep(int sleep) { this->sleep = sleep; }
+void Bars::setHygiene(int hygiene) { this->hygiene = hygiene; }
 
 // returns an int representation of health bar level
 int Bars::getHealth() { return health; }
@@ -84,3 +91,75 @@ void Bars::barStatus() {
             << "Sleep: " << sleep << std::endl
             << "Hygiene: " << hygiene << std::endl;
 }
+
+void Bars::decreaseHealthPoints(int amount) {
+  health -= amount;
+  if (health <= 0) {
+    health = 0;
+  }
+}
+
+void Bars::increaseHealthPoints(int amount){
+  health += amount;
+  if (health >= MAX) {
+    health = MAX;
+  }
+}
+
+void Bars::decreaseHappinessPoints(int amount) {
+  happiness -= amount;
+  if (happiness <= 0) {
+    happiness = 0;
+  }
+}
+
+void Bars::increaseHappinessPoints(int amount){
+  happiness += amount;
+  if (happiness >= MAX) {
+    happiness = MAX;
+  }
+}
+
+void Bars::decreaseHungerPoints(int amount) {
+  hunger -= amount;
+  if (hunger <= 0) {
+    hunger = 0;
+  }
+}
+
+void Bars::increaseHungerPoints(int amount){
+  hunger += amount;
+  if (hunger >= MAX) {
+    hunger = MAX;
+  }
+}
+
+void Bars::decreaseSleepPoints(int amount) {
+  sleep -= amount;
+  if (sleep <= 0) {
+    sleep = 0;
+  }
+}
+
+void Bars::increaseSleepPoints(int amount){
+  sleep += amount;
+  if (sleep >= MAX) {
+    sleep = MAX;
+  }
+}
+
+void Bars::decreaseHygienePoints(int amount) {
+  hygiene -= amount;
+  if (hygiene <= 0) {
+    hygiene = 0;
+  }
+}
+
+void Bars::increaseHygienePoints(int amount){
+  hygiene += amount;
+  if (hygiene >= MAX) {
+    hygiene = MAX;
+  }
+}
+
+

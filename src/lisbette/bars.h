@@ -1,7 +1,11 @@
 #pragma once
 
 class Bars {
+
 public:
+  Bars(int health = 100, int happiness = 40, int hunger = 100, int sleep = 100,
+       int hygiene = 100);
+
   // getter functions for each bar
   int getHealth();
   int getHappiness();
@@ -9,14 +13,13 @@ public:
   int getSleep();
   int getHygiene();
 
-  // allows bars to be set to a different number
-  int setHealth(int);
-  int setHappiness(int);
-  int setHunger(int);
-  int setSleep(int);
-  int setHygiene(int);
+  void setHealth(int);
+  void setHappiness(int);
+  void setHunger(int);
+  void setSleep(int);
+  void setHygiene(int);
 
-  // info about all the bars and functions that affect all bars
+  // functions that relate to all bars
   void barStatus();
   void decreasePoints(int amount = 10);
   void increasePoints(int amount = 5);
@@ -35,10 +38,6 @@ public:
 
   void decreaseHygienePoints(int amount = 10);
   void increaseHygienePoints(int amount = 5);
-
-  // initializes the bars to the starting amount of points
-  Bars(int health = 100, int happiness = 40, int hunger = 100, int sleep = 100,
-       int hygiene = 100);
 
 private:
   const int MAX = 100;
