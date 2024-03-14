@@ -6,12 +6,14 @@
 #include <iostream>
 #include <string>
 
+#define COLOR_BROWN "\e[38;5;130m"
 #define COLOR_RED "\033[31m"
 #define COLOR_YELLOW "\033[93m"
 #define COLOR_GREEN "\033[32m"
 #define COLOR_BLUE "\033[94m"
 #define COLOR_WHITE "\033[0m"
 
+#define H COLOR_BROWN
 #define R COLOR_RED
 #define Y COLOR_YELLOW
 #define G COLOR_GREEN
@@ -47,6 +49,12 @@ void color_text(std::string my_text, char my_color) {
     std::cout << colored_set;
     std::cout << my_text << std::endl;
     break;
+
+  case 'H':
+    colored_set = H; // Sets text to blue
+    std::cout << colored_set;
+    std::cout << my_text << std::endl;
+    break;  
   }
 
   colored_string = W;

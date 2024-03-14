@@ -12,10 +12,8 @@ int main() {
   std::string petName;
 
   do {
-    std::cout
-              << "======================================\n          ❥ Welcome "
-                 "to My Pet! ❥\n======================================\n"
-               << std::endl;
+    color_text( "======================================\n          ❥ Welcome "
+                 "to My Pet! ❥\n======================================\n", 'H');
 
     std::cout << "Choose your pet:" << std::endl
               << "a) Dog" << std::endl
@@ -49,7 +47,7 @@ int main() {
 
   } while ((petChoice == 'a') || (petChoice == 'b') || (petChoice == 'c'));
 
-  std::cout << COLOR_RED
+  std::cout
             << "INVALID ENTRY: VALID INPUTS INCLUDE \"a\", \"b\", or \"c\""
             << std::endl;
   std::cin >> petChoice;
