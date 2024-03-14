@@ -6,7 +6,7 @@
 //#include "../lisbette/main.cpp"
 
 //When using this we will have to compile the PetSprites.cpp and whatever main.cpp file together using g++ main.cpp PetSprites.cpp -o main
-//Also making sure that we dont redefine the functinos somewhere else unless its used in a header file usin inline... -> inline void CatSprite
+//Also making sure that we dont redefine the functions somewhere else unless its used in a header file usin inline... -> inline void CatSprite
 
 
 //Cat Sprites
@@ -442,10 +442,10 @@ void FrogCleaning(int numFrames, int frameDelay) {
 
 //TESTING CODE//
 
-int main() { ///CODE THAT WILL BE USED IN MAIN CODE
-    std::string foodChoice;                            //could be userChoice and then individually doing the eating, sleeping, cleaning, individualy
-    std::cout << "Feed you pet? Yes or no?" << std::endl;
-    std::cin >> foodChoice;                             //use tolower to make sure its no issues arise
+//int main() { ///CODE THAT WILL BE USED IN MAIN CODE
+    //std::string foodChoice;                            //could be userChoice and then individually doing the eating, sleeping, cleaning, individualy
+    //std::cout << "Feed you pet? Yes or no?" << std::endl;
+    //std::cin >> foodChoice;                             //use tolower to make sure its no issues arise
 
     //std::string sleepChoice;
     //std::cout << "Have your pet sleep? Yes or no?" << std::endl;
@@ -455,17 +455,17 @@ int main() { ///CODE THAT WILL BE USED IN MAIN CODE
     //std::cout << "Wash your pet? Yes or no?" << std::endl;
     //std::cin >> washChoice; 
 
-if (foodChoice == "yes") {
-    CatEating(5, 500);
+//if (foodChoice == "yes") {
+    //CatEating(5, 500);
     //DogEating(5, 500);
     //FrogEating(5, 500);
     
-} else {
-    CatSprite(5, 500);
+//} else {
+    //CatSprite(5, 500);
     //DogSprite(6, 500);
     //FrogSprite(6, 500);
-    std::cout << "You choose not to feed your pet." << std::endl;
-}
+    //std::cout << "You choose not to feed your pet." << std::endl;
+//}
 
 //if (sleepChoice == "yes") {
     //CatSleeping(6, 500); 
@@ -490,8 +490,8 @@ if (foodChoice == "yes") {
 //}
 
 
-return 0;
-}
+//return 0;
+//}
 
 
 
