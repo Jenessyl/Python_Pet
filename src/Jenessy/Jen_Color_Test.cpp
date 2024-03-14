@@ -8,6 +8,7 @@ int main() {
   color_text("Hello", 'Y');
   color_text("Hello", 'G');
   color_text("Hello", 'B');
+  color_text("Hello", 'H');
 
   return 0;
 }

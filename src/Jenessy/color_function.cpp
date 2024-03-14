@@ -7,6 +7,8 @@
 #define G COLOR_GREEN
 #define B COLOR_BLUE
 #define W COLOR_WHITE
+#define COLOR_BROWN "\e[38;5;130m"
+#define H COLOR_BROWN
 
 // takes text and desired color (R,Y,G,B) as arguments and outputs colored text
 // (Input text will have an endl attached once printed)
@@ -37,8 +39,12 @@ void color_text(std::string my_text, char my_color) {
     std::cout << colored_set;
     std::cout << my_text << std::endl;
     break;
+  case 'H':
+    colored_set = H; // Sets text to brown
+    std::cout << colored_set;
+    std::cout << my_text << std::endl;
+    break;  
   }
-
   colored_string = W;
   std::cout << colored_string;
-}
+  }
