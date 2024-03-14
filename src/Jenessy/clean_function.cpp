@@ -1,41 +1,36 @@
 #include <string>
 #include <iostream>
-#include <random>
+#include <ctime>
 
-void clean_action(std::string pet_name) {
-    int ScenarioNum
-
-    std::cout << "It is bathtime!" << std::endl;
+//This function ativates the clean action
+void clean_action(std::string petName) {
+    std::cout << "==============================" << std::endl;
+    std::cout << "｡ﾟ It is bathime! ｡ﾟ" << std::endl;
+    std::cout << "==============================" << std::endl;
     //show sprite of bathtime
     
     //Generating a random scenario
-    std::random_device dev;
-    std::mt19937 rng(dev());
-    std::uniform_int_distribution<std::mt19937::result_type> RandNum(1,4);
-    std::cin >> ScenarioNum;
+    int ScenarioNum;
+    ScenarioNum = (rand() % 5); //
+
+    std::cout << "ScenarioNum = " << ScenarioNum << std::endl;
 
     switch(ScenarioNum) {
+        case 0:
+            std::cout << petName << " was extra relaxed and played with bubbles." << std::endl;
+            break;
         case 1:
-            std::cout << pet_name << " was extra relaxed and played with bubbles." << std::endl;
+            std::cout << petName << " feels pampered and clean." << std::endl;
             break;
         case 2:
-            std::cout << pet_name << " feels pampered and clean." << std::endl;
+            std::cout << petName << " broke its ankle getting out of the bath." << std::endl;
             break;
         case 3:
-            std::cout << pet_name << " broke its ankle getting out of the bath." << std::endl;
+            std::cout << petName << " got soap in its eyes. Ouch!" << std::endl;
             break;
-        case 4:
-            std::cout << pet_name << " got soap in its eyes. Ouch!" << std::endl;
-            break;
-
     }
+    std::cout << "" << std::endl;
 
-    // random chance scenario >> increase affection or decrease health
-    // 3 random chance scenarios using random
-       // Your pet was extra relaxed and played with bubbles.
-       // Your pet feels pampered and clean.
-       // Your pet broke its ankle getting out of the bath.
-       // Your pet got soap in its eyes. Ouch!     
 
     //lower daily counter
 
