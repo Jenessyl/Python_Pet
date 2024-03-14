@@ -1,4 +1,4 @@
-#include "-hunger.h"
+#include "hunger.h"
 #include "../lisbette/bars.h"
 #include "../lisbette/main.cpp"
 
@@ -11,7 +11,7 @@ void feed(Pet& pet, Bars& bars) {
     std::cin >> feedChoice;
 
     if (feedChoice == "yes") {
-        bars.increaseHealthPoints();        //not sure if I need to add the exact amount in parameters or not
+        bars.increaseHungerPoints();        //not sure if I need to add the exact amount in parameters or not
         std::cout << "You fed your pet, and increased its bars!" << std::endl;
     } else if (feedChoice == "no") {
         std::cout << "You chose not to feed your pet." << std::endl;
