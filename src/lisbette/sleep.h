@@ -8,5 +8,3 @@
 #include <thread>
 
 void sleep(std::string petName);
-void sleepQuality();
-void sleepDuration();

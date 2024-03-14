@@ -89,7 +89,7 @@ void Bars::barStatus() {
             << "Happiness: " << happiness << std::endl
             << "Hunger: " << hunger << std::endl
             << "Sleep: " << sleep << std::endl
-            << "Hygiene: " << hygiene << std::endl;
+            << "Hygiene: " << hygiene << std::endl ;
 }
 
 void Bars::decreaseHealthPoints(int amount) {
@@ -99,7 +99,7 @@ void Bars::decreaseHealthPoints(int amount) {
   }
 }
 
-void Bars::increaseHealthPoints(int amount){
+void Bars::increaseHealthPoints(int amount) {
   health += amount;
   if (health >= MAX) {
     health = MAX;
@@ -113,7 +113,7 @@ void Bars::decreaseHappinessPoints(int amount) {
   }
 }
 
-void Bars::increaseHappinessPoints(int amount){
+void Bars::increaseHappinessPoints(int amount) {
   happiness += amount;
   if (happiness >= MAX) {
     happiness = MAX;
@@ -127,7 +127,7 @@ void Bars::decreaseHungerPoints(int amount) {
   }
 }
 
-void Bars::increaseHungerPoints(int amount){
+void Bars::increaseHungerPoints(int amount) {
   hunger += amount;
   if (hunger >= MAX) {
     hunger = MAX;
@@ -141,7 +141,7 @@ void Bars::decreaseSleepPoints(int amount) {
   }
 }
 
-void Bars::increaseSleepPoints(int amount){
+void Bars::increaseSleepPoints(int amount) {
   sleep += amount;
   if (sleep >= MAX) {
     sleep = MAX;
@@ -155,7 +155,7 @@ void Bars::decreaseHygienePoints(int amount) {
   }
 }
 
-void Bars::increaseHygienePoints(int amount){
+void Bars::increaseHygienePoints(int amount) {
   hygiene += amount;
   if (hygiene >= MAX) {
     hygiene = MAX;
@@ -163,3 +163,31 @@ void Bars::increaseHygienePoints(int amount){
 }
 
 
+int main() {
+    // Create an instance of the Bars class
+    Bars petBars;
+
+    // Test setting and getting values
+    petBars.setHealth(90);
+    std::cout << "Health: " << petBars.getHealth() << std::endl;
+
+    // Test increasing and decreasing all points
+    petBars.decreasePoints(10);
+    std::cout << "Points after decrease: " << std::endl;
+    petBars.barStatus();
+
+    petBars.increasePoints(15);
+    std::cout << "Increased points: " << std::endl;
+    petBars.barStatus();
+
+    // Test specific attribute functions
+    petBars.decreaseHealthPoints(20);
+    std::cout << "Decreased health points: " << std::endl;
+    petBars.barStatus();
+
+    petBars.increaseHappinessPoints(10);
+    std::cout << "Increased happiness points: " << std::endl;
+    petBars.barStatus();
+
+    return 0;
+}

@@ -20,29 +20,41 @@ void sleep(std::string pet) {
     sleepProgress += 25;
     std::cout << "Sleeping... Progress: " << sleepProgress << "%" << std::endl;
   }
-  std::cout << "\n" << pet << " woke up!" << std::endl;
+  std::cout << "\n" << pet << " is awake!" << std::endl;
 
   // chooses a random integer from 1-4 that corresponds to sleep activity
   int randomNumber;
-  //   srand(time(NULL));
+  srand(time(NULL));
   randomNumber = (rand() % 5);
 
   switch (randomNumber) {
   case 0:
-    std::cout << "\n" << pet << " had a great night of sleep." << std::endl;
+    std::cout
+        << "\n"
+        << pet
+        << " had a great night of sleep.\n====================================="
+        << std::endl;
     // adjust bars
     break;
   case 1:
-    std::cout << "\n" << pet << " is feeling well rested." << std::endl;
+    std::cout << "\n"
+              << pet
+              << " is feeling well rested.\n============================="
+              << std::endl;
     // adjust bars
     break;
   case 2:
-    std::cout << "\n" << pet << " is feeling sick. Oh no!" << std::endl;
+    std::cout << "\n"
+              << pet << " is feeling sick. Oh no!\n============================"
+              << std::endl;
     // adjust bars
     break;
   case 3:
     std::cout << "\n"
-              << pet << " was tossing & turning all night." << std::endl;
+              << pet
+              << " was tossing & turning all "
+                 "night.\n===================================="
+              << std::endl;
     // adjust bars
     break;
   }
@@ -74,6 +86,12 @@ int main() {
 
   std::string name4 = "SDASDSADS";
   sleep(name4);
+
+  std::string name5 = "fifth";
+  sleep(name5);
+
+  // 3,1,2,0 is the order is the order it follows with  srand(time(NULL)) (27)
+  // commented out; when in use it is truly random
 
   return 0;
 }
