@@ -2,7 +2,7 @@
 #include "PetSprites.h"
 #include <iostream>
 
-//here is where each pet type class is made, cat, dog, and frog.
+// here is where each pet type class is made, cat, dog, and frog.
 
 class Cat : public Pet {
 public:
@@ -20,7 +20,7 @@ public:
   }
 
 
-  void feed(Bars& bars) const override {
+  void feed(Bars &bars) const override {
     std::cout << "You fed your cat a bowl of fish." << std::endl;
   }
 };
@@ -43,8 +43,7 @@ public:
   }
 
 
-
-  void feed(Bars& bars) const override {
+  void feed(Bars &bars) const override {
     std::cout << "You gave your dog a bone!"
               << std::endl; //"They dug it into the ground :("
   }
@@ -65,13 +64,12 @@ public:
                  "   )_/ /|\\   /|\\ \\_(    ";
   }
 
-  //void interact() const override {
-  //  std::cout
-  //      << "You picked a frog! Would you like to feed your pet? (yes/no): ";
-  //}
+  // void interact() const override {
+  //   std::cout
+  //       << "You picked a frog! Would you like to feed your pet? (yes/no): ";
+  // }
 
-  void feed(Bars& bars) const override {
+  void feed(Bars &bars) const override {
     std::cout << "You fed the frog a plate of instects!" << std::endl;
   }
 };
-

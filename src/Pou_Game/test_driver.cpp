@@ -1,8 +1,8 @@
 /**
  * Project III: Start testing here.
  */
-#include "library.h"
 #include "library.cpp"
+#include "library.h"
 #include <assert.h>
 #include <string>
 

@@ -1,5 +1,5 @@
-#pragma once 
+#pragma once
 
 #include "Pet.h"
 
-void displayPetInfo(const Pet& pet);
+void displayPetInfo(const Pet &pet);
