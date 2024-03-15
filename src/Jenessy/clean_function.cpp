@@ -11,8 +11,30 @@ void clean_action(std::string petName) {
     //Generating a random scenario
     int ScenarioNum;
     ScenarioNum = (rand() % 5); //
+<<<<<<< HEAD
 
     std::cout << "ScenarioNum = " << ScenarioNum << std::endl;
+=======
+
+    std::cout << "ScenarioNum = " << ScenarioNum << std::endl;
+
+    switch(ScenarioNum) {
+        case 0:
+            std::cout << petName << " was extra relaxed and played with bubbles." << std::endl;
+            break;
+        case 1:
+            std::cout << petName << " feels pampered and clean." << std::endl;
+            break;
+        case 2:
+            std::cout << petName << " broke its ankle getting out of the bath." << std::endl;
+            break;
+        case 3:
+            std::cout << petName << " got soap in its eyes. Ouch!" << std::endl;
+            break;
+    }
+    std::cout << "" << std::endl;
+
+>>>>>>> 36c92c1edf4055b63424b64a54a5adc6ae9df343
 
     switch(ScenarioNum) {
         case 0:
@@ -33,7 +55,10 @@ void clean_action(std::string petName) {
 
   // lower daily counter
 
+<<<<<<< HEAD
   // increase clean bar
 
   // increase affection
+=======
+>>>>>>> 36c92c1edf4055b63424b64a54a5adc6ae9df343
 }
