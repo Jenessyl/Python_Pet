@@ -13,7 +13,7 @@ int main() {
 
   do {
     color_text( "======================================\n          ❥ Welcome "
-                 "to My Pet! ❥\n======================================\n", 'H');
+                 "to My Pet! ❥\n======================================\n", 'Y');
 
     std::cout << "Choose your pet:" << std::endl
               << "a) Dog" << std::endl
