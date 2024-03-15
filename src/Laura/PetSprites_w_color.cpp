@@ -1,4 +1,5 @@
 #include "PetSprites.h"
+#include "colors.h"
 #include <iostream>
 #include <thread>
 #include <chrono>
@@ -130,9 +131,11 @@ void CatSleeping(int numFrames, int frameDelay) {
 
 void catShower() {
         static bool frameToggle = true;
+        std::string showerColor;
         if (frameToggle) {
         // Displaying cat ASCII art!
-        std::cout << "                      \n"         //if can we should make this text brown
+        showerColor = H;
+        showerColor += "                      \n"         //if can we should make this text brown
                      "    /\\_____/\\ meow   \n"
                      "   /  -   -  \\     \n"
                      "  ( ==  ^  == )  _\n"
@@ -141,7 +144,8 @@ void catShower() {
                      " ( (  )   (  ) )  ( \n"
                      "(__(__)___(__)__)  )\n";
         } else {
-        std::cout << "                 meow    \n"
+        showerColor = W;
+        showerColor += "                 meow    \n"
                      "    /\\_____/\\    \n"
                      "   /  o   o  \\        \n"
                      "  ( ==  ^  == )   _\n"
@@ -149,7 +153,8 @@ void catShower() {
                      "  (           ) ( ( \n"
                      " ( (  )   (  ) )   ) \n"
                      "(__(__)___(__)__) (\n";
-        }        
+        }    
+          
 
         frameToggle = !frameToggle; //toggles frames
 
@@ -167,44 +172,7 @@ void CatCleaning(int numFrames, int frameDelay) {
     } std::cout << "Your cat is all clean!\n";
 }
 
-void catded() {
-        static bool frameToggle = true;
-        if (frameToggle) {
-        // Displaying cat ASCII art!
-        std::cout << "                      \n"        
-                     "    /\\_____/\\    \n"
-                     "   /  X   X  \\     \n"
-                     "  ( ==  ^  == )  _\n"
-                     "   )         (  ( (\n"
-                     "  (           )  ) ) \n"
-                     " ( (  )   (  ) )  ( \n"
-                     "(__(__)___(__)__)  )\n";
-        } else {
-        std::cout << "                     \n"
-                     "    /\\_____/\\    \n"
-                     "   /  X   X  \\        \n"
-                     "  ( ==  ^  == )  _\n"
-                     "   )         (  ( (\n"
-                     "  (           )  ) ) \n"
-                     " ( (  )   (  ) )  ( \n"
-                     "(__(__)___(__)__) )\n";
-        }        
 
-        frameToggle = !frameToggle; //toggles frames
-
-    }
-
-
-
-void CatDied(int numFrames, int frameDelay) {
-    for (int i = 0; i < numFrames; ++i) {
-        clearScreen();
-        catded();
-        std::cout << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(frameDelay));
-    
-    } ;
-}
 
 
 //Dog Sprites
@@ -246,6 +214,7 @@ void DogSprite(int numFrames, int frameDelay) {
     
     };
 }
+
 void dogMunch() {
         static bool frameToggle = true;
         if (frameToggle) {
@@ -323,7 +292,44 @@ void DogSleeping(int numFrames, int frameDelay) {
     } std::cout << "Your dog slept all night!\n";
 }
 
+void dogded() {
+        static bool frameToggle = true;
+        if (frameToggle) {
+        // Displaying dog ASCII art!
+        std::cout << "        /  \\         \n"
+                     "       / x x|\\     \n"
+                     "      (_\\  |_)    \n"
+                     "      /  \\y'      \n"
+                     "     /     \\      \n"
+                     "_   /  `   |      \n"
+                     "\\\\/  \\  | _\\      \n"
+                     " \\   /_ || \\_    \n"
+                     "  \\____)|_) \\_)   \n";
+        } else {
+        std::cout << "        /   \\      \n"
+                     "       / x x |\\      \n"
+                     "      (_\\   |_)    \n"
+                     "      /  \\y'      \n"
+                     "     /     \\      \n"
+                     "_   /  `   |      \n"
+                     "\\\\/  \\  | _\\      \n"
+                     " \\   /_ || \\_    \n"
+                     "  \\____)|_) \\_)   \n";
+        }        
 
+        frameToggle = !frameToggle; //toggles frames
+
+    }
+
+void DogDied(int numFrames, int frameDelay) {
+    for (int i = 0; i < numFrames; ++i) {
+        clearScreen();
+        dogded();
+        std::cout << std::endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(frameDelay));
+    
+    };
+}
 
 //Frog Sprites
 
@@ -473,6 +479,41 @@ void FrogCleaning(int numFrames, int frameDelay) {
     } std::cout << "Your pet is all clean!\n";
 }
 
+void frogded() {
+        static bool frameToggle = true;
+        if (frameToggle) {
+        // Displaying dog ASCII art!
+        std::cout << "         _   _           \n"
+                     "        (x)_(x)       \n"
+                     "     _ (   _   ) _    \n"
+                     "    / \\/`-----'\\/ \\   \n"
+                     "  __\\ ( (     ) ) /__ \n"
+                     "  )   /\\ \\._./ /\\   ( \n"
+                     "   )_/ /|\\   /|\\ \\_(    ";
+        } else {
+        std::cout << "         _   _        \n"
+                     "        (x)_(x)       \n"
+                     "     _ (   _   ) _    \n"
+                     "    / \\/`-----'\\/ \\   \n"
+                     "  __\\ ( (     ) ) /__ \n"
+                     "  )   /\\ \\._./ /\\   ( \n"
+                     "   )_/ /|\\   /|\\ \\_(    ";
+        }        
+
+        frameToggle = !frameToggle; //toggles frames
+
+    }
+
+void FrogDied(int numFrames, int frameDelay) {
+    for (int i = 0; i < numFrames; ++i) {
+        clearScreen();
+        frogded();
+        std::cout << std::endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(frameDelay));
+    
+    };
+}
+
 
 
 
@@ -480,29 +521,29 @@ void FrogCleaning(int numFrames, int frameDelay) {
 //TESTING CODE//
 
 int main() { ///CODE THAT WILL BE USED IN MAIN CODE
-    std::string foodChoice;                            //could be userChoice and then individually doing the eating, sleeping, cleaning, individualy
-    std::cout << "Feed your pet? Yes or no?" << std::endl;
-    std::cin >> foodChoice;                             //use tolower to make sure its no issues arise
+    //std::string foodChoice;                            //could be userChoice and then individually doing the eating, sleeping, cleaning, individualy
+    //std::cout << "Feed your pet? Yes or no?" << std::endl;
+    //std::cin >> foodChoice;                             //use tolower to make sure its no issues arise
 
     //std::string sleepChoice;
     //std::cout << "Have your pet sleep? Yes or no?" << std::endl;
     //std::cin >> sleepChoice;                    //figure out how to lowercase user input
 
-    //std::string washChoice;
-    //std::cout << "Wash your pet? Yes or no?" << std::endl;
-    //std::cin >> washChoice; 
+    std::string washChoice;
+    std::cout << "Wash your pet? Yes or no?" << std::endl;
+    std::cin >> washChoice; 
 
-if (foodChoice == "yes") {
+//if (foodChoice == "yes") {
     //CatEating(5, 500);
-    DogEating(5, 500);
+//    DogEating(5, 500);
     //FrogEating(5, 500);
     
-} else {
+//} else {
     //CatSprite(5, 500);
-    DogSprite(6, 500);
+//    DogSprite(6, 500);
     //FrogSprite(6, 500);
-    std::cout << "You choose not to feed your pet." << std::endl;
-}
+//    std::cout << "You choose not to feed your pet." << std::endl;
+//}
 
 //if (sleepChoice == "yes") {
     //CatSleeping(6, 500); 
@@ -515,16 +556,16 @@ if (foodChoice == "yes") {
 //    std::cout << "Your pet did not go to sleep." << std::endl;
 //}
 
-//if (washChoice == "yes") {
-    //CatCleaning(6, 500); 
+if (washChoice == "yes") {
+    CatCleaning(6, 500); 
     //DogCleaning(6, 500);
     //FrogCleaning(6, 500);   
-//} else{
-    //CatSprite(6, 500);
+} else{
+    CatSprite(6, 500);
     //DogSprite(6, 500);
     //FrogSprite(6, 500);
-//    std::cout << "Your pet did not get clean." << std::endl;
-//}
+    std::cout << "Your pet did not get clean." << std::endl;
+}
 
 
 return 0;

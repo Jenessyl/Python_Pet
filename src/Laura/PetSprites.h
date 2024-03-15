@@ -20,3 +20,7 @@ void FrogEating();
 void CatCleaning();
 void DogCleaning();
 void FrogCleaning();
+
+void CatDied();
+void DogDied();
+void FrogDied();

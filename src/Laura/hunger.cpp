@@ -6,6 +6,7 @@
 
 //hunger or feed function for pets
 
+//feed function is reactant to what is choosen 
 
 void feed(Pet& pet, Bars& bars) {
     std::cout << "Would you like to feed your pet? (yes/no): ";
@@ -13,7 +14,7 @@ void feed(Pet& pet, Bars& bars) {
     std::cin >> feedChoice;
 
     if (feedChoice == "yes") {
-        bars.increaseHungerPoints();         //not sure if I need to add the exact amount in parameters or not
+        //increaseHungerPoints(int amount = 5);         //not sure if I need to add the exact amount in parameters or not
         //CatEating();       
         std::cout << "You fed your pet, and increased its bars!" << std::endl;
     } else if (feedChoice == "no") {
