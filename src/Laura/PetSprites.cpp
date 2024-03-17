@@ -572,14 +572,14 @@ void FrogDied(int numFrames, int frameDelay) {
 
 
 
-int main() { ///CODE THAT WILL BE USED IN MAIN CODE
+//int main() { ///CODE THAT WILL BE USED IN MAIN CODE
     //std::string foodChoice;                            //could be userChoice and then individually doing the eating, sleeping, cleaning, individualy
     //std::cout << "Feed you pet? Yes or no?" << std::endl;
     //std::cin >> foodChoice;                             //use tolower to make sure its no issues arise
 
-    std::string sleepChoice;
-    std::cout << "Have your pet sleep? Yes or no?" << std::endl;
-    std::cin >> sleepChoice;                    //figure out how to lowercase user input
+    //std::string sleepChoice;
+    //std::cout << "Have your pet sleep? Yes or no?" << std::endl;
+    //std::cin >> sleepChoice;                    //figure out how to lowercase user input
 
     //std::string washChoice;
     //std::cout << "Wash your pet? Yes or no?" << std::endl;
@@ -598,16 +598,16 @@ int main() { ///CODE THAT WILL BE USED IN MAIN CODE
     //std::cout << "You choose not to feed your pet." << std::endl;
 //}
 
-if (sleepChoice == "yes") {
-    CatSleeping(6, 500); 
+//if (sleepChoice == "yes") {
+    //CatSleeping(6, 500); 
     //DogSleeping(6, 500);
     //FrogSleeping(6, 500);   
-} else{
-    CatSprite(6, 500);
+//} else{
+    //CatSprite(6, 500);
     //DogSprite(6, 500);
     //FrogSprite(6, 500);
-    std::cout << "Your pet did not go to sleep." << std::endl;
-}
+    //std::cout << "Your pet did not go to sleep." << std::endl;
+//}
 
 //if (washChoice == "yes") {
     //CatCleaning(6, 500); 
@@ -621,8 +621,8 @@ if (sleepChoice == "yes") {
 //}
 
 
-return 0;
-}
+//return 0;
+//}
 
 
 
