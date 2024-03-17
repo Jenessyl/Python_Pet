@@ -1,12 +1,15 @@
 #include "library.cpp"
 #include <string>
+#include "hunger.cpp" //temporary
+#include "bars.cpp" //temporary
 
-void game_loop() {
+void game_loop(std::string petName) {
     bool outerFlag = true;
     int day = 1;
     int moves;
     int affection = 0;
     char actionChoice;
+    Bars petBars;
 
     while (outerFlag == true) {
         color_text("======================================", 'B');
@@ -15,9 +18,16 @@ void game_loop() {
         color_text(CombinedString1, 'B');
         
         //Display Bar values
-        std::cout << "affection " << affection << std::endl;
+
+        // petBars.setHappiness(0);
+        // petBars.setHunger(0);
+        // petBars.setSleep(0);
+        // petBars.setHygiene(100);
+        petBars.barStatus();
+
+        // std::cout << "affection " << affection << std::endl;
         std::cout << "" << std::endl;
-        moves = 2; //Daily move replenish
+        moves = 2; //Daily move replenish        
         
         //Action selection
         while (moves > 0) {
@@ -48,7 +58,8 @@ void game_loop() {
                         break;
 
                     case 'b':
-                        // call feed function  
+                        // call feed function 
+                        feed(petName);
                         actionFlag = false;
                         moves -= 1;
                         affection += 25;             
@@ -79,7 +90,7 @@ void game_loop() {
     
     //Check win & lose conditions
     if (affection >= 100){
-      displayWin("Tony");
+      displayWin(petName);
       outerFlag = false;
     }//affection check end
     else{        

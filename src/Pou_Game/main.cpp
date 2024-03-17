@@ -53,12 +53,12 @@ int main() {
       std::cin >> petName;
       intro_flag = false;
       break;
-      
+
     default:
       break;
     }
   } while (intro_flag == true);
   
   std::cout << std::endl;
-  game_loop();
+  game_loop(petName);
 }
