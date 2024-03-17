@@ -1,39 +1,42 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include "playGame.h"
 
-using namespace std;
-
-void playGuessingGame() {
-    srand(time(0)); 
-    int secretNumber = rand() % 100 + 1; 
-    int attempts = 5; 
-    cout << "I've thought of a number between 1 and 100.\nCan you guess it? You have " << attempts << " attempts." << endl;
-
-    int low = 1;
-    int high = 100;
-    
-    while (attempts > 0) {
-        int mid = (low + high) / 2;
-        cout << "Is it " << mid << "? (1: Too high, 2: Too low, 3: Correct): ";
-        int response;
-        cin >> response;
-
-        if (response == 3) {
-            cout << "Congratulations! You've guessed the correct number!" << endl;
-            return;
-        } else if (response == 1) {
-            high = mid - 1;
-        } else {
-            low = mid + 1;
-        }
-        attempts--;
+// Number guessing game using binary search with recursion
+void playGame(int lowVal, int highVal, int numGuesses) {
+    if (numGuesses == 3) {
+        std::cout << "==============================================" << std::endl;
+        std::cout << "Sorry, you've exhausted all your guesses." << std::endl;
+        std::cout << "The correct number was not found." << std::endl;
+        std::cout << "==============================================" << std::endl;
+        return;
     }
 
-    cout << "Sorry, you've run out of attempts. The correct number was " << secretNumber << endl;
+    std::cout << "==============================================" << std::endl;
+    std::cout << "Choose a number from " << lowVal << " to " << highVal << "." << std::endl;
+    std::cout << "I will try to guess your number (l, h, y)" << std::endl;
+    std::cout << "==============================================" << std::endl;
+
+    char userAnswer;
+    int midVal = (highVal + lowVal) / 2;
+    std::cout << "Is it " << midVal << "? ";
+    std::cin >> userAnswer;
+
+    if (userAnswer == 'y') {
+        std::cout << "==============================================" << std::endl;
+        std::cout << "Yay! We did it! Thanks for playing!" << std::endl;
+        std::cout << "==============================================" << std::endl;
+        return;
+    }
+
+    if (userAnswer == 'l') {
+        playGame(lowVal, midVal, numGuesses + 1); 
+    } else {
+        playGame(midVal + 1, highVal, numGuesses + 1); 
+    }
 }
 
 int main() {
-    playGuessingGame(); 
+    playGame();
+
     return 0;
 }
