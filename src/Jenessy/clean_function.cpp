@@ -50,10 +50,7 @@ void clean_action(std::string petName) {
 
   // lower daily counter
 
-<<<<<<< HEAD
   // increase clean bar
 
   // increase affection
-=======
->>>>>>> 36c92c1edf4055b63424b64a54a5adc6ae9df343
 }

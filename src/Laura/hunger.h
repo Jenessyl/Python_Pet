@@ -1,6 +1,4 @@
 #pragma once
+#include <iostream>
 
-#include "Pet.h"
-#include "../lisbette/bars.h"
-
-void feed(Pet& pet, Bars& bars);  
+void feed(std::string petName);  
