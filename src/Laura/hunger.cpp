@@ -6,14 +6,10 @@
 
 // hunger or feed function for pets
 
-<<<<<<< HEAD
-//feed function is reactant to what is choosen 
-=======
 void feedPet(Pet &pet, Bars &bars) {
   std::cout << "Would you like to feed your pet? (yes/no): ";
   std::string feedChoice;
   std::cin >> feedChoice;
->>>>>>> 5ef834887c226a93ba7d5946ebcc8723d8f92092
 
 void feed(Pet& pet, Bars& bars) {
     std::cout << "Would you like to feed your pet? (yes/no): ";

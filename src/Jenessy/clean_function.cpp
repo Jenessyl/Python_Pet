@@ -11,10 +11,6 @@ void clean_action(std::string petName) {
     //Generating a random scenario
     int ScenarioNum;
     ScenarioNum = (rand() % 5); //
-<<<<<<< HEAD
-
-    std::cout << "ScenarioNum = " << ScenarioNum << std::endl;
-=======
 
     std::cout << "ScenarioNum = " << ScenarioNum << std::endl;
 
@@ -34,7 +30,6 @@ void clean_action(std::string petName) {
     }
     std::cout << "" << std::endl;
 
->>>>>>> 36c92c1edf4055b63424b64a54a5adc6ae9df343
 
     switch(ScenarioNum) {
         case 0:

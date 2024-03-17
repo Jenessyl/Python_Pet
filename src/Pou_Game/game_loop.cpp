@@ -1,4 +1,5 @@
 #include "library.cpp"
+#include <string>
 
 void game_loop() {
     bool outerFlag = true;
@@ -8,8 +9,13 @@ void game_loop() {
     char actionChoice;
 
     while (outerFlag == true) {
-        std::cout << "=============" << std::endl;
-        std::cout << "DAY " << day << std::endl;
+        color_text("======================================", 'B');
+        std::string dayString = "DAY ";
+        // std::cout << "DAY " << day << std::endl;
+        std::string dayNumString = std::to_string(day);
+        std::string CombinedString1 = dayString + dayNumString;
+        color_text(CombinedString1, 'B');
+        
         //bar values
         std::cout << "affection " << affection << std::endl;
         std::cout << "" << std::endl;
@@ -41,6 +47,6 @@ void game_loop() {
     }//Outerflag end
 }//ENDEND
 
-int main() {
-    game_loop();
-}
+// int main() {
+//     game_loop();
+// }
