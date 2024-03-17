@@ -1,7 +1,7 @@
 # CPTR 142: Project III
 
 Add information about your project.
-Such as detailed description, known bugs and user operation instructions.
+Such as detailed descriptions, known bugs and user operation instructions.
 This is the file a user will first look at when attempting to run your program.
 
 ## Terminal Commands
@@ -9,7 +9,7 @@ This is the file a user will first look at when attempting to run your program.
 Build and run the program.
 
 ```sh
-make && ./a.out
+make
 ```
 
 Clean out build files.
@@ -18,10 +18,10 @@ Clean out build files.
 make clean
 ```
 
-Build and run testing program.
+Build and run test program.
 
 ```sh
-make DRIVER=src/test_driver.cpp && ./a.out
+make DRIVER=src/test_driver.cpp
 ```
 
 Clean out test build files.

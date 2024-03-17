@@ -4,4 +4,4 @@
 #pragma once
 
 
-void playGame(std::string name, Bars petBar, int lowVal = 0, int highVal = 10, int numGuesses = 0);
+void playGame(std::string name, Bars &petBar, int lowVal = 0, int highVal = 10, int numGuesses = 0);

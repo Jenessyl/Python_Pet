@@ -19,3 +19,5 @@ test_compile:
   image: gitlab.cs.wallawalla.edu:5050/cs_department/docker-images/cpp
   script:
     - make compile
+    - make clean
+    - make compile DRIVER=src/test_driver.cpp

@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 SRCS = src/library.cpp 
 SRCS = src/library.cpp src/library.h 
+=======
+SRCS = src/library.cpp
+>>>>>>> upstream/master
 EXE = a.out
 SUBMITTY_CXXFLAGS = -I.
 
