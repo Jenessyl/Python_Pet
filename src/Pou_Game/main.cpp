@@ -19,8 +19,8 @@ int main() {
 
   //pet and name selection
   do {
-    std::cout << "Choose your pet:" << std::endl
-              << "a) Dog" << std::endl
+    color_text("Choose your pet:", 'Y');
+              std::cout <<"a) Dog" << std::endl
               << "b) Cat" << std::endl
               << "c) Frog\n"
               << std::endl
@@ -34,7 +34,7 @@ int main() {
 
     switch (petChoice) {
     case 'a':
-      std::cout << "Enter the name of your pet: ";
+      color_text("Enter the name of your pet: ", 'Y');
       std::cin >> petName;
       // Bars dogBar;
       // dogBar.barStatus();
@@ -43,13 +43,13 @@ int main() {
       break;
 
     case 'b':
-      std::cout << "Enter the name of your pet: ";
+      color_text("Enter the name of your pet: ", 'Y');
       std::cin >> petName;
       intro_flag = false;
       break;
 
     case 'c':
-      std::cout << "Enter the name of your pet: ";
+      color_text("Enter the name of your pet: ", 'Y');
       std::cin >> petName;
       intro_flag = false;
       break;

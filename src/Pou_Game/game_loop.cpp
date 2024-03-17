@@ -1,7 +1,7 @@
 #include "library.cpp"
 #include <string>
-#include "hunger.cpp" //temporary
-#include "bars.cpp" //temporary
+#include "Action_Functions/hunger.cpp" //temporary
+#include "Bar_Class/bars.cpp" //temporary
 
 void game_loop(std::string petName) {
     bool outerFlag = true;
@@ -18,11 +18,6 @@ void game_loop(std::string petName) {
         color_text(CombinedString1, 'B');
         
         //Display Bar values
-
-        // petBars.setHappiness(0);
-        // petBars.setHunger(0);
-        // petBars.setSleep(0);
-        // petBars.setHygiene(100);
         petBars.barStatus();
 
         // std::cout << "affection " << affection << std::endl;

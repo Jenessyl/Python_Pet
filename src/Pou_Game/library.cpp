@@ -71,12 +71,17 @@ void color_text(std::string my_text, char my_color) {
 
 //This function will play if the player gets the affection bar to 100 (Wins)
 void displayWin(std::string petName) {
-    std::cout << "============================" << std::endl;
-    std::cout << "Congratulations!\n" << "You have reached a max level of affection with " << petName << "." << std::endl;
-    std::cout << petName << " wishes you the best in life and will never forget you." << std::endl;
+    color_text("============================", 'B');
+    color_text("✧ CONGRATULATIONS ✧", 'B');
+    std::cout << std::endl;
+    std::string CombinedStringA = "You have reached a max level of affection with " + petName + "!";
+    color_text(CombinedStringA, 'B');
+    std::string CombinedStringB = petName + " wishes you the best in life and will never forget you.";
+     color_text(CombinedStringB, 'B');
+
     //put sprite
 
-    std::cout << "============================" << std::endl;
-    std::cout << "✿ Thank you for playing ✿" << std::endl;
+    color_text("============================", 'B');
+    color_text("✿ Thank you for playing ✿", 'B');
 }
 

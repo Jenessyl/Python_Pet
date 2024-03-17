@@ -1,4 +1,4 @@
-// #include "hunger.h"
+#include "hunger.h"
 #include <ctime>
 
 //feed function for pets
