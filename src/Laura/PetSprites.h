@@ -1,7 +1,5 @@
 #pragma once
-#include "Pet.h"
 #include "hunger.h"
-#include "../lisbette/bars.h"
 
 
 
