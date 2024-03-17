@@ -8,6 +8,7 @@ void game_loop(std::string petName) {
     int day = 1;
     int moves;
     int affection = 0;
+    bool deathFlag = false;
     char actionChoice;
     Bars petBars;
 
@@ -84,15 +85,18 @@ void game_loop(std::string petName) {
     day += 1;
     
     //Check win & lose conditions
-    if (affection >= 100){
+    //Lose
+    if (petBars.getHealth() <= 0){
+        displayDeath(petName);
+        deathFlag = true;
+        outerFlag = false;
+    }
+
+    //Win
+    if ((affection >= 100) && (deathFlag == false)){
       displayWin(petName);
       outerFlag = false;
-    }//affection check end
-    else{        
     }
-    }//Outerflag end
-}//ENDEND
 
-// int main() {
-//     game_loop();
-// }
+    }//Outerflag end
+}//MAIN END
