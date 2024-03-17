@@ -1,7 +1,9 @@
-#include "library.cpp"
+
 #include <string>
 #include "Action_Functions/hunger.cpp" //temporary
-#include "Bar_Class/bars.cpp" //temporary
+#include "Action_Functions/clean.cpp" //temporary
+// #include "Bar_Class/bars.cpp" //temporary
+
 
 void game_loop(std::string petName) {
     bool outerFlag = true;
@@ -62,8 +64,7 @@ void game_loop(std::string petName) {
                         break;
 
                     case 'c':
-                        // call clean function  
-                        actionFlag = false; 
+                        clean_action(petName, petBars);                      actionFlag = false; 
                         moves -= 1;
                         affection += 25;                               
                         break;
@@ -93,7 +94,7 @@ void game_loop(std::string petName) {
     }
 
     //Win
-    if ((affection >= 100) && (deathFlag == false)){
+    if ((petBars.getHappiness() >= 100) && (deathFlag == false)){
       displayWin(petName);
       outerFlag = false;
     }

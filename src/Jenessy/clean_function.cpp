@@ -2,7 +2,7 @@
 #include <ctime>
 
 //This function ativates the clean action
-void clean_action(std::string petName) {
+void clean_action(std::string petName, Bar PetBars) {
     std::cout << "==============================" << std::endl;
     std::cout << "｡ﾟ It is bathime! ｡ﾟ" << std::endl;
     std::cout << "==============================" << std::endl;
@@ -29,24 +29,6 @@ void clean_action(std::string petName) {
             break;
     }
     std::cout << "" << std::endl;
-
-
-    switch(ScenarioNum) {
-        case 0:
-            std::cout << petName << " was extra relaxed and played with bubbles." << std::endl;
-            break;
-        case 1:
-            std::cout << petName << " feels pampered and clean." << std::endl;
-            break;
-        case 2:
-            std::cout << petName << " broke its ankle getting out of the bath." << std::endl;
-            break;
-        case 3:
-            std::cout << petName << " got soap in its eyes. Ouch!" << std::endl;
-            break;
-    }
-    std::cout << "" << std::endl;
-
 
   // lower daily counter
 
