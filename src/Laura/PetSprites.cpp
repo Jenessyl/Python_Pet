@@ -32,7 +32,7 @@ void catDisplay() {
                      " ( (  )   (  ) )   ) \n"
                      "(__(__)___(__)__)  )\n" << COLOR_RESET << std::endl;
         } else {
-        std::cout << cOLOR_LIGHT_PINK << COLOR_BOLD <<
+        std::cout << COLOR_LIGHT_PINK << COLOR_BOLD <<
                      "    /\\_____/\\   meow \n"
                      "   /  o   o  \\     \n"
                      "  ( ==  ^  == )   _\n"
