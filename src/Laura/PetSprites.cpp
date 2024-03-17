@@ -102,22 +102,24 @@ void catSnooze() {
         static bool frameToggle = true;
         if (frameToggle) {
         // Displaying cat ASCII art!
-        std::cout << COLOR_DARK_GREY << COLOR_BOLD << "                      \n" 
+        std::cout << COLOR_DARK_GREY << COLOR_BOLD <<
+                     "                      \n" 
                      "    /\\_____/\\   Z \n"
                      "   /  -   -  \\ Z    \n"
                      "  ( ==  ^  == )  _\n"
                      "   )         (  ( (\n"
                      "  (           )  ) ) \n"
-                     " ( (  )   (  ) )  ( \n"
+                     " ( (  )   (  ) )( ( \n"
                      "(__(__)___(__)__)  )\n" << COLOR_RESET << std::endl;
         } else {
-        std::cout << COLOR_BOLD << "                 Z    \n"
+        std::cout << COLOR_BOLD <<
+                     "                 Z    \n"
                      "    /\\_____/\\   Z \n"
                      "   /  -   -  \\        \n"
                      "  ( ==  ^  == )   _\n"
                      "   )         (   ) )\n"
                      "  (           ) ( ( \n"
-                     " ( (  )   (  )  )  ) \n"
+                     " ( (  )   (  ) ) ) ) \n"
                      "(__(__)___(__)__) (\n" << COLOR_RESET << std::endl;
         }        
 
@@ -451,23 +453,24 @@ void frogSnooze() {
         static bool frameToggle = true;
         if (frameToggle) {
         // Displaying dog ASCII art!
-        std::cout << "                              \n"
+        std::cout << COLOR_DARK_GREY << COLOR_BOLD << "                              \n"
                      "         _   _   Z     \n"
                      "        (-)_(-) Z       \n"
                      "     _ (   _   ) _    \n"
                      "    / \\/`-----'\\/ \\   \n"
                      "  __\\ ( (     ) ) /__ \n"
                      "  )   /\\ \\._./ /\\   ( \n"
-                     "   )_/ /|\\   /|\\ \\_(    ";
+                     "   )_/ /|\\   /|\\ \\_(    " << COLOR_RESET << std::endl;
         } else {
-        std::cout << "                  Z            \n"
+        std::cout << COLOR_BOLD <<
+                     "                  Z            \n"
                      "         _   _   Z         \n"
                      "        (-)_(-)       \n"
                      "     _ (   _   ) _    \n"
                      "    / \\/`-----'\\/ \\   \n"
                      "  __\\ ( (     ) ) /__ \n"
                      "  )   /\\ \\._./ /\\   ( \n"
-                     "   )_/ /|\\   /|\\ \\_(    ";
+                     "   )_/ /|\\   /|\\ \\_(    " << COLOR_RESET << std::endl;
         }        
 
         frameToggle = !frameToggle; //toggles frames
@@ -488,23 +491,25 @@ void frogShower() {
         static bool frameToggle = true;
         if (frameToggle) {
         // Displaying dog ASCII art!
-        std::cout << "         ⸯ       ⸯ        ⸯ    ⸯ  \n"
+        std::cout << COLOR_BROWN<< COLOR_BOLD<<
+                     "         ⸯ       ⸯ        ⸯ    ⸯ  \n"
                      "ⸯ       ⸯ _   _    ⸯ    \n"
                      " ⸯ    ⸯ  (-)_(-)  ribbit  ⸯ     \n"
                      "ⸯ   ⸯ _ (   _   ) _    \n"
                      "    / \\/`-----'\\/ \\   \n"
                      "  __\\ ( (     ) ) /__ \n"
                      "  )   /\\ \\._./ /\\   ( \n"
-                     "   )_/ /|\\   /|\\ \\_(    ";
+                     "   )_/ /|\\   /|\\ \\_(    "<< COLOR_RESET << std::endl;
         } else {
-        std::cout << "   ˚         ⟡     ˚    ⟡     \n"
+        std::cout << COLOR_BLUE << COLOR_BOLD <<
+                     "   ˚         ⟡     ˚    ⟡     \n"
                      "    ⟡  ˚ _   _     ribbit       \n"
                      "        (.)_(.)   ⟡    ˚ \n"
                      "  ⟡  _ (   _   ) _    \n"
                      "    / \\/`-----'\\/ \\⟡   \n"
                      "˚ __\\ ( (     ) ) /__ \n"
                      "  )   /\\ \\._./ /\\   ( \n"
-                     "   )_/ /|\\   /|\\ \\_(    ";
+                     "   )_/ /|\\   /|\\ \\_(    " COLOR_RESET << std::endl;
         }        
 
         frameToggle = !frameToggle; //toggles frames
