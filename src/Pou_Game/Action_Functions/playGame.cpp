@@ -3,12 +3,12 @@
 #include "../library.cpp"
 
 // Number guessing game using binary search with recursion
-void playGame(std::string name, Bars petBar, int lowVal, int highVal, int numGuesses) {
+void playGame(std::string name, Bars &petBar, int lowVal, int highVal, int numGuesses) {
 
     // include this in game loop before calling this function since it is recursive and will print each time
-    color_text("〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰", 'C');
-    color_text("🧩 WELCOME TO THE GUESSING GAME! 🧩", 'B');
-    color_text("〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰", 'C');
+    color_text("〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰", 'C');
+    color_text("🕹️ 👾 WELCOME TO THE GUESSING GAME! 🕹️ 👾", 'G');
+    color_text("〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰", 'C');
 
 
     //show sprite of pet playing a game
