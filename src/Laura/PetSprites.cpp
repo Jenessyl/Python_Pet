@@ -14,6 +14,8 @@
 #define BG_CYAN "\033[46m"
 #define COLOR_BROWN "\e[38;5;130m"
 #define COLOR_DARK_GREY "\033[90m"
+#define COLOR_PINK "\033[38;5;206m"
+#define COLOR_LIGHT_PINK "\033[38;5;218m"
 
 
 //Cat Sprites
@@ -21,21 +23,23 @@ void catDisplay() {
         static bool frameToggle = true;
         if (frameToggle) {
         // Displaying cat ASCII art!
-        std::cout << "    /\\_____/\\   \n"
+        std::cout << COLOR_PINK << COLOR_BOLD <<
+                     "    /\\_____/\\   \n"
                      "   /  o   o  \\ meow  \n"
                      "  ( ==  ^  == )   _\n"
                      "   )         (   ) )\n"
                      "  (           ) ( ( \n"
                      " ( (  )   (  ) )   ) \n"
-                     "(__(__)___(__)__)  )\n";
+                     "(__(__)___(__)__)  )\n" << COLOR_RESET << std::endl;
         } else {
-        std::cout << "    /\\_____/\\   meow \n"
+        std::cout << cOLOR_LIGHT_PINK << COLOR_BOLD <<
+                     "    /\\_____/\\   meow \n"
                      "   /  o   o  \\     \n"
                      "  ( ==  ^  == )   _\n"
                      "   )         (  ( (\n"
                      "  (           )  ) ) \n"
                      " ( (  )   (  ) )  ( \n"
-                     "(__(__)___(__)__)  )\n";
+                     "(__(__)___(__)__)  )\n" << COLOR_RESET << std::endl;
         }        
 
         frameToggle = !frameToggle; //toggles frames
