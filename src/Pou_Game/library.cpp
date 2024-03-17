@@ -11,6 +11,7 @@
 #define COLOR_YELLOW "\033[93m"
 #define COLOR_GREEN "\033[32m"
 #define COLOR_BLUE "\033[94m"
+#define COLOR_CYAN "\e[0;36m"
 #define COLOR_WHITE "\033[0m"
 
 #define H COLOR_BROWN
@@ -18,6 +19,7 @@
 #define Y COLOR_YELLOW
 #define G COLOR_GREEN
 #define B COLOR_BLUE
+#define C COLOR_CYAN
 #define W COLOR_WHITE
 
 // takes text and desired color (R,Y,G,B) as arguments and outputs colored text
@@ -50,8 +52,14 @@ void color_text(std::string my_text, char my_color) {
     std::cout << my_text << std::endl;
     break;
 
+  case 'C':
+    colored_set = C; // Sets text to cyan
+    std::cout << colored_set;
+    std::cout << my_text << std::endl;
+    break;
+
   case 'H':
-    colored_set = H; // Sets text to blue
+    colored_set = H; // Sets text to hazel
     std::cout << colored_set;
     std::cout << my_text << std::endl;
     break;  
