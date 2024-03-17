@@ -1,8 +1,7 @@
 
 #include <string>
 #include "Action_Functions/hunger.cpp" //temporary
-#include "Action_Functions/clean.cpp" //temporary
-// #include "Bar_Class/bars.cpp" //temporary
+#include "low_stats_check.cpp"
 
 
 void game_loop(std::string petName) {
@@ -83,19 +82,21 @@ void game_loop(std::string petName) {
           } while (actionFlag == true);
         }//Daily end
 
+    low_stats_check(petName, petBars);
+
     day += 1;
     
     //Check win & lose conditions
     //Lose
     if (petBars.getHealth() <= 0){
-        displayDeath(petName);
+        displayDeath(petName, std::to_string(day));
         deathFlag = true;
         outerFlag = false;
     }
 
     //Win
     if ((petBars.getHappiness() >= 100) && (deathFlag == false)){
-      displayWin(petName);
+      displayWin(petName, std::to_string(day));
       outerFlag = false;
     }
 

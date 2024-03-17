@@ -2,7 +2,6 @@
  * Project III: Start here.
  */
 #include <string>
-// #include "colors.h"
 #include <iostream>
 #include <string>
 
@@ -70,14 +69,15 @@ void color_text(std::string my_text, char my_color) {
 }
 
 //This function will play if the player gets the affection bar to 100 (Wins)
-void displayWin(std::string petName) {
+void displayWin(std::string petName, std::string day) {
     color_text("============================", 'B');
     color_text("✧ CONGRATULATIONS ✧", 'Y');
     std::cout << std::endl;
     std::string CombinedStringA = "You have reached a max level of affection with " + petName + "!";
     color_text(CombinedStringA, 'B');
     std::string CombinedStringB = petName + " wishes you the best in life and will never forget you.";
-     color_text(CombinedStringB, 'B');
+    color_text(CombinedStringB, 'B');
+    color_text("You had " + petName + " for " + day + " days." , 'Y');
 
     //put sprite
 
@@ -86,13 +86,14 @@ void displayWin(std::string petName) {
 }
 
 //This function will play if health bar is 0 or lower (Lose)
-void displayDeath(std::string petName) {
+void displayDeath(std::string petName, std::string day) {
     color_text("============================", 'R');
     color_text("💀  OH NO 💀", 'Y');
     std::string CombinedStringA = petName + "'s health went too low. They have DIED!";
     color_text(CombinedStringA, 'R');
     std::string CombinedStringB = petName + " cries in the afterlife.";
     color_text(CombinedStringB, 'R');
+    color_text(petName + " lived for " + day + " days." , 'Y');
 
     //put sprite
 
@@ -102,9 +103,9 @@ void displayDeath(std::string petName) {
 
 // //displayWin & displayDeath test
 // int main() {
-//     displayWin("Tony");
+//     displayWin("Tony", "7");
 //     std::cout << std::endl;
-//     displayDeath("Tony");
+//     displayDeath("Tony", "7");
 //     return 0;
 // }
 
