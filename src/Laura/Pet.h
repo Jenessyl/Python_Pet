@@ -1,23 +1,43 @@
 #pragma once
-
+#include "PetSprites.h"
 #include <cstdlib>
 #include <iostream>
 #include <string>
-
 #include <cstdlib>
     
 
+class Cat {
+public:
+void clearScreen();
 
-class Pet {
-    public:
-    char type;
+void CatSprite();
+void CatSleeping();
+void CatEating();
+void CatCleaning();
+void CatDied();
 
-    Pet(char petType);
+};
+
+class Dog  {
+public:
+void clearScreen();
     
-    //member functions
-    void feed();
-    void wash();
-    void sleep();
+void DogSprite();
+void DogSleeping();
+void DogEating();
+void DogCleaning();
+void DogDied();
 
-    char getType() const;
+};
+
+class Frog  {
+public: 
+void clearScreen();
+   
+void FrogSprite();
+void FrogSleeping();
+void FrogEating();
+void FrogCleaning();
+void FrogDied();
+    
 };
