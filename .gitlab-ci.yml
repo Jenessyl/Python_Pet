@@ -1,24 +1,21 @@
 ---
-image: "python:3.7"
-
-before_script:
-  - apt install -qqy gcc
-  - python --version
-  - pip install -r requirements.txt
-
 stages:
   - Static Analysis
 
 codespell:
   stage: Static Analysis
+  image: gitlab.cs.wallawalla.edu:5050/cs_department/docker-images/linters
   script:
     - codespell -f
 
 clang-format:
   stage: Static Analysis
-  image: ubuntu:latest
-  before_script:
-    - apt update
-    - apt install -qqy clang-format
+  image: gitlab.cs.wallawalla.edu:5050/cs_department/docker-images/linters
   script:
     - ./.gitlab/format.sh
+
+test_compile:
+  stage: Static Analysis
+  image: gitlab.cs.wallawalla.edu:5050/cs_department/docker-images/cpp
+  script:
+    - make compile
