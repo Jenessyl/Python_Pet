@@ -33,3 +33,5 @@ Here are the things to include in this codument.
     - March 10: Ending functions done (Win/lose) & bar function.
     - March 14: Sprite & action functions done. Combining files from separate folders (had basic game loop done)
     - March 17: Final code & presentation ready
+
+    Presentation Slides (https://www.canva.com/design/DAF_iCRgI8E/u8O1d7278sRMAeZNqGFscg/edit)
