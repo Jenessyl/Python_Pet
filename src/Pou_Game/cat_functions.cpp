@@ -1,5 +1,4 @@
-// #include "Pet.h"
-#include "Pet.h"
+#include "cat_functions.h"
 #include <chrono>
 #include <iostream>
 #include <string>
@@ -18,14 +17,14 @@
 #define COLOR_PINK "\033[38;5;206m"
 #define COLOR_LIGHT_PINK "\033[38;5;218m"
 
-// here is where each pet type class is made, cat, dog, and frog.
-
-void Cat::Normal() {
+// Sprites for pet cat
+void catNormal() {
   static bool frameToggle = true;
   if (frameToggle) {
     // Displaying cat ASCII art!
     std::cout << COLOR_PINK << COLOR_BOLD
-              << "    /\\_____/\\   \n"
+              << "                      \n"
+                 "    /\\_____/\\   \n"
                  "   /  o   o  \\ meow  \n"
                  "  ( ==  ^  == )   _\n"
                  "   )         (   ) )\n"
@@ -35,7 +34,8 @@ void Cat::Normal() {
               << COLOR_RESET << std::endl;
   } else {
     std::cout << COLOR_LIGHT_PINK << COLOR_BOLD
-              << "    /\\_____/\\   meow \n"
+              << "                      \n"
+                 "    /\\_____/\\   meow \n"
                  "   /  o   o  \\     \n"
                  "  ( ==  ^  == )   _\n"
                  "   )         (  ( (\n"
@@ -48,54 +48,26 @@ void Cat::Normal() {
   frameToggle = !frameToggle; // toggles frames
 }
 
-void Cat::Eating() {
+void catEating() {
   static bool frameToggle = true;
   if (frameToggle) {
     // Displaying cat ASCII art!
-    std::cout
-        << "                      \n" // if can we should make this text brown
-           "    /\\_____/\\ munch   \n"
-           "   /  o   o  \\     \n"
-           "  ( ==  ^  == )  _\n"
-           "   )         (  ( (\n"
-           "  (           )  ) ) \n"
-           " ( (  )   (  ) )  ( \n"
-           "(__(__)___(__)__)  )\n";
+    std::cout << COLOR_BROWN << COLOR_BOLD
+              << "                      \n"
+                 "    /\\_____/\\ munch   \n"
+                 "   /  o   o  \\     \n"
+                 "  ( ==  ^  == )  _\n"
+                 "   )         (  ( (\n"
+                 "  (           )  ) ) \n"
+                 " ( (  )   (  ) )  ( \n"
+                 "(__(__)___(__)__)  )\n"
+              << COLOR_RESET << std::endl;
   } else {
-    std::cout << "                 munch    \n"
+    std::cout << COLOR_BOLD
+              << "                 munch    \n"
                  "    /\\_____/\\    \n"
                  "   /  o   o  \\        \n"
                  "  ( ==  o  == )   _\n"
-                 "   )         (   ) )\n"
-                 "  (           ) ( ( \n"
-                 " ( (  )   (  ) )   ) \n"
-                 "(__(__)___(__)__) (\n";
-  }
-
-  frameToggle = !frameToggle; // toggles frames
-}
-
-void Cat::Cleaning() {
-  static bool frameToggle = true;
-  if (frameToggle) {
-    // Displaying cat ASCII art!
-    std::cout
-        << COLOR_BROWN
-        << "                      \n" // if can we should make this text brown
-           "    /\\_____/\\ meow   \n"
-           "   /  -   -  \\     \n"
-           "  ( ==  ^  == )  _\n"
-           "   )         (  ( (\n"
-           "  (           )  ) ) \n"
-           " ( (  )   (  ) )  ( \n"
-           "(__(__)___(__)__)  )\n"
-        << COLOR_RESET << std::endl;
-  } else {
-    std::cout << COLOR_BLUE
-              << "                 meow    \n"
-                 "    /\\_____/\\    \n"
-                 "   /  o   o  \\        \n"
-                 "  ( ==  ^  == )   _\n"
                  "   )         (   ) )\n"
                  "  (           ) ( ( \n"
                  " ( (  )   (  ) )   ) \n"
@@ -106,7 +78,37 @@ void Cat::Cleaning() {
   frameToggle = !frameToggle; // toggles frames
 }
 
-void Cat::Sleeping() {
+void catCleaning() {
+  static bool frameToggle = true;
+  if (frameToggle) {
+    // Displaying cat ASCII art!
+    std::cout << COLOR_BROWN
+              << "              ⸯ    ⸯ  \n"
+                 "  ⸯ /\\_____/\\ meow   \n"
+                 "   /  -   -  \\  ⸯ  \n"
+                 "  ( ==  ^  == )  _\n"
+                 "   )         (  ( (\n"
+                 "ⸯ (           ) ⸯ) ) \n"
+                 " ( (  )   (  ) )  ( \n"
+                 "(__(__)___(__)__)  )\n"
+              << COLOR_RESET << std::endl;
+  } else {
+    std::cout << COLOR_BLUE
+              << "  ⟡       ˚      meow ⟡  \n"
+                 "  ˚ /\\_____/\\˚   \n"
+                 " ⟡ /  o   o  \\  ⟡     \n"
+                 "  ( ==  ^  == )  ˚_\n"
+                 "   )         (   ) )\n"
+                 "˚ (           ) ( ( \n"
+                 " ( (  )   (  ) )   ) \n"
+                 "(__(__)___(__)__) (\n"
+              << COLOR_RESET << std::endl;
+  }
+
+  frameToggle = !frameToggle; // toggles frames
+}
+
+void catSleeping() {
   static bool frameToggle = true;
   if (frameToggle) {
     // Displaying cat ASCII art!
@@ -136,7 +138,7 @@ void Cat::Sleeping() {
   frameToggle = !frameToggle; // toggles frames
 }
 
-void Cat::Died() {
+void catDied() {
   static bool frameToggle = true;
   if (frameToggle) {
     // Displaying cat ASCII art!
@@ -159,68 +161,57 @@ void Cat::Died() {
                  "   )         (  ( (\n"
                  "  (           )  ) ) \n"
                  " ( (  )   (  ) )  ( \n"
-                 "(__(__)___(__)__) )\n"
+                 "(__(__)___(__)__)  )\n"
               << COLOR_RESET << std::endl;
   }
 
   frameToggle = !frameToggle; // toggles frames
 }
 
-void Cat::clearScreen() { std::cout << "\033[2J\033[H"; }
+// Functions for sprtie display use
+void catClearScreen() { std::cout << "\033[2J\033[H"; }
 
-void Cat::displayNormal(int numFrames = 6, int frameDelay = 500) {
+void catDisplayNormal(int numFrames, int frameDelay) {
   for (int i = 0; i < numFrames; ++i) {
-    clearScreen();
-    Normal();
+    catClearScreen();
+    catNormal();
     std::cout << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(frameDelay));
   }
 }
 
-void Cat::displayEating(int numFrames = 6, int frameDelay = 500) {
+void catDisplayEating(int numFrames, int frameDelay) {
   for (int i = 0; i < numFrames; ++i) {
-    clearScreen();
-    Eating();
+    catClearScreen();
+    catEating();
     std::cout << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(frameDelay));
   };
 }
 
-void Cat::displayCleaning(int numFrames = 6, int frameDelay = 500) {
+void catDisplayCleaning(int numFrames, int frameDelay) {
   for (int i = 0; i < numFrames; ++i) {
-    clearScreen();
-    Cleaning();
+    catClearScreen();
+    catCleaning();
     std::cout << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(frameDelay));
   };
 }
 
-void Cat::displaySleeping(int numFrames = 6, int frameDelay = 500) {
+void catDisplaySleeping(int numFrames, int frameDelay) {
   for (int i = 0; i < numFrames; ++i) {
-    clearScreen();
-    Sleeping();
+    catClearScreen();
+    catSleeping();
     std::cout << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(frameDelay));
   };
 }
 
-void Cat::displayDied(int numFrames = 6, int frameDelay = 500) {
+void catDisplayDied(int numFrames, int frameDelay) {
   for (int i = 0; i < numFrames; ++i) {
-    clearScreen();
-    Died();
+    catClearScreen();
+    catDied();
     std::cout << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(frameDelay));
   };
-}
-
-// TEST SPRITES
-int main() {
-  Cat testCat;
-  testCat.displayNormal();
-  testCat.displayEating();
-  testCat.displayCleaning();
-  testCat.displaySleeping();
-  testCat.displayDied();
-
-  return 0;
 }

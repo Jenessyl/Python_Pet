@@ -1,9 +1,13 @@
 /**
  * Project III: Start here.
  */
-#include <string>
+#include "library.h"
 #include <iostream>
 #include <string>
+
+#include "cat_functions.h"
+#include "dog_functions.h"
+#include "frog_functions.h"
 
 #define COLOR_BROWN "\e[38;5;130m"
 #define COLOR_RED "\033[31m"
@@ -21,8 +25,7 @@
 #define C COLOR_CYAN
 #define W COLOR_WHITE
 
-// takes text and desired color (R,Y,G,B) as arguments and outputs colored text
-// (Input text will have an endl attached once printed)
+// takes text and desired color (R,Y,G,B,H) as arguments and outputs colored text (NOTE: Input text will have an endl attached once printed)
 void color_text(std::string my_text, char my_color) {
   std::string colored_string, colored_set;
 
@@ -61,51 +64,71 @@ void color_text(std::string my_text, char my_color) {
     colored_set = H; // Sets text to hazel
     std::cout << colored_set;
     std::cout << my_text << std::endl;
-    break;  
+    break;
   }
 
   colored_string = W;
   std::cout << colored_string;
 }
 
-//This function will play if the player gets the affection bar to 100 (Wins)
-void displayWin(std::string petName, std::string day) {
-    color_text("============================", 'B');
-    color_text("✧ CONGRATULATIONS ✧", 'Y');
-    std::cout << std::endl;
-    std::string CombinedStringA = "You have reached a max level of affection with " + petName + "!";
-    color_text(CombinedStringA, 'B');
-    std::string CombinedStringB = petName + " wishes you the best in life and will never forget you.";
-    color_text(CombinedStringB, 'B');
-    color_text("You had " + petName + " for " + day + " days." , 'Y');
+// This function will play if the player gets the affection bar to 100 (Wins)
+void displayWin(std::string petName, std::string day, char animal) {
 
-    //put sprite
+  switch (animal) {
+  case 'a':
+    dogDisplayNormal();
+    break;
+  case 'b':
+    catDisplayNormal();
+    break;
+  case 'c':
+    frogDisplayNormal();
+    break;
+  }
 
-    color_text("============================", 'B');
-    color_text("✿ Thank you for playing ✿", 'B');
+  color_text("============================", 'B');
+  color_text("✧ CONGRATULATIONS ✧", 'Y');
+  std::cout << std::endl;
+  std::string CombinedStringA =
+      "You have reached a max level of affection with " + petName + "!";
+  color_text(CombinedStringA, 'B');
+  std::string CombinedStringB =
+      petName + " wishes you the best in life and will never forget you.";
+  color_text(CombinedStringB, 'B');
+  color_text("You had " + petName + " for " + day + " days.", 'Y');
+  std::cout << std::endl;
+
+  color_text("============================", 'B');
+  color_text("✿ Thank you for playing ✿", 'B');
 }
 
-//This function will play if health bar is 0 or lower (Lose)
-void displayDeath(std::string petName, std::string day) {
-    color_text("============================", 'R');
-    color_text("💀  OH NO 💀", 'Y');
-    std::string CombinedStringA = petName + "'s health went too low. They have DIED!";
-    color_text(CombinedStringA, 'R');
-    std::string CombinedStringB = petName + " cries in the afterlife.";
-    color_text(CombinedStringB, 'R');
-    color_text(petName + " lived for " + day + " days." , 'Y');
+// This function will play if health bar is 0 or lower (Lose)
+void displayDeath(std::string petName, std::string day, char animal) {
 
-    //put sprite
+  switch (animal) {
+  case 'a':
+    dogDisplayDied();
+    break;
+  case 'b':
+    catDisplayDied();
+    break;
+  case 'c':
+    frogDisplayDied();
+    break;
+  }
 
-    color_text("============================", 'R');
-    color_text("❖ You were not meant to be a pet owner ❖", 'R');
+  color_text("============================", 'R');
+  color_text("💀  OH NO 💀", 'Y');
+  std::cout << std::endl;
+  std::string CombinedStringA =
+      petName + "'s health went too low. They have DIED!";
+  color_text(CombinedStringA, 'R');
+  std::string CombinedStringB = petName + " cries in the afterlife.";
+  color_text(CombinedStringB, 'R');
+  color_text(petName + " lived for " + day + " days.", 'Y');
+  std::cout << std::endl;
+
+  color_text("============================", 'R');
+  color_text("❖ You were not meant to be a pet owner ❖", 'R');
 }
-
-// //displayWin & displayDeath test
-// int main() {
-//     displayWin("Tony", "7");
-//     std::cout << std::endl;
-//     displayDeath("Tony", "7");
-//     return 0;
-// }
 

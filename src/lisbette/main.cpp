@@ -14,6 +14,7 @@
 #define COLOR_UNDERLINE "\033[4m"
 #define BG_BLUE "\033[44m"
 #define BG_CYAN "\033[46m"
+#define COLOR_BROWN "\e[38;5;130m"
 
 int main() {
   // Print the menu for pet selection

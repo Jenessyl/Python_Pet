@@ -3,10 +3,19 @@
 #include <thread>
 #include <chrono>
 #include <string>
-//#include "../lisbette/main.cpp"
 
-//When using this we will have to compile the PetSprites.cpp and whatever main.cpp file together using g++ main.cpp PetSprites.cpp -o main
-//Also making sure that we dont redefine the functions somewhere else unless its used in a header file usin inline... -> inline void CatSprite
+#define COLOR_RESET "\033[0m"
+#define COLOR_RED "\033[31m"
+#define COLOR_BLUE "\033[34m"
+#define COLOR_MAGENTA "\033[35m"
+#define COLOR_BOLD "\033[1m"
+#define COLOR_UNDERLINE "\033[4m"
+#define BG_BLUE "\033[44m"
+#define BG_CYAN "\033[46m"
+#define COLOR_BROWN "\e[38;5;130m"
+#define COLOR_DARK_GREY "\033[90m"
+#define COLOR_PINK "\033[38;5;206m"
+#define COLOR_LIGHT_PINK "\033[38;5;218m"
 
 
 //Cat Sprites
@@ -14,21 +23,23 @@ void catDisplay() {
         static bool frameToggle = true;
         if (frameToggle) {
         // Displaying cat ASCII art!
-        std::cout << "    /\\_____/\\   \n"
+        std::cout << COLOR_PINK << COLOR_BOLD <<
+                     "    /\\_____/\\   \n"
                      "   /  o   o  \\ meow  \n"
                      "  ( ==  ^  == )   _\n"
                      "   )         (   ) )\n"
                      "  (           ) ( ( \n"
                      " ( (  )   (  ) )   ) \n"
-                     "(__(__)___(__)__)  )\n";
+                     "(__(__)___(__)__)  )\n" << COLOR_RESET << std::endl;
         } else {
-        std::cout << "    /\\_____/\\   meow \n"
+        std::cout << COLOR_LIGHT_PINK << COLOR_BOLD <<
+                     "    /\\_____/\\   meow \n"
                      "   /  o   o  \\     \n"
                      "  ( ==  ^  == )   _\n"
                      "   )         (  ( (\n"
                      "  (           )  ) ) \n"
                      " ( (  )   (  ) )  ( \n"
-                     "(__(__)___(__)__)  )\n";
+                     "(__(__)___(__)__)  )\n" << COLOR_RESET << std::endl;
         }        
 
         frameToggle = !frameToggle; //toggles frames
@@ -49,6 +60,8 @@ void CatSprite(int numFrames, int frameDelay) {
     
     };
 }
+
+
 
 void catMunch() {
         static bool frameToggle = true;
@@ -79,37 +92,39 @@ void catMunch() {
 
 
 
-void CatEating(int numFrames, int frameDelay) {
+void CatEating(int numFrames , int frameDelay) {
     for (int i = 0; i < numFrames; ++i) {
         clearScreen();
         catMunch();
         std::cout << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(frameDelay));
     
-    } std::cout << "You fed your cat a yummy fish!\n";
+    };
 }
 
 void catSnooze() {
         static bool frameToggle = true;
         if (frameToggle) {
         // Displaying cat ASCII art!
-        std::cout << "                      \n" 
+        std::cout << COLOR_DARK_GREY << COLOR_BOLD <<
+                     "                      \n" 
                      "    /\\_____/\\   Z \n"
                      "   /  -   -  \\ Z    \n"
                      "  ( ==  ^  == )  _\n"
                      "   )         (  ( (\n"
                      "  (           )  ) ) \n"
-                     " ( (  )   (  ) )  ( \n"
-                     "(__(__)___(__)__)  )\n";
+                     " ( (  )   (  ) )( ( \n"
+                     "(__(__)___(__)__)  )\n" << COLOR_RESET << std::endl;
         } else {
-        std::cout << "                 Z    \n"
+        std::cout << COLOR_BOLD <<
+                     "                 Z    \n"
                      "    /\\_____/\\   Z \n"
                      "   /  -   -  \\        \n"
                      "  ( ==  ^  == )   _\n"
                      "   )         (   ) )\n"
                      "  (           ) ( ( \n"
-                     " ( (  )   (  ) )   ) \n"
-                     "(__(__)___(__)__) (\n";
+                     " ( (  )   (  ) ) ) ) \n"
+                     "(__(__)___(__)__) (\n" << COLOR_RESET << std::endl;
         }        
 
         frameToggle = !frameToggle; //toggles frames
@@ -132,23 +147,25 @@ void catShower() {
         static bool frameToggle = true;
         if (frameToggle) {
         // Displaying cat ASCII art!
-        std::cout << "                      \n"         //if can we should make this text brown
+        std::cout << COLOR_BROWN << 
+                     "                      \n"         //if can we should make this text brown
                      "    /\\_____/\\ meow   \n"
                      "   /  -   -  \\     \n"
                      "  ( ==  ^  == )  _\n"
                      "   )         (  ( (\n"
                      "  (           )  ) ) \n"
                      " ( (  )   (  ) )  ( \n"
-                     "(__(__)___(__)__)  )\n";
+                     "(__(__)___(__)__)  )\n"<< COLOR_RESET << std::endl;
         } else {
-        std::cout << "                 meow    \n"
+        std::cout << COLOR_BLUE << 
+                     "                 meow    \n"
                      "    /\\_____/\\    \n"
                      "   /  o   o  \\        \n"
                      "  ( ==  ^  == )   _\n"
                      "   )         (   ) )\n"
                      "  (           ) ( ( \n"
                      " ( (  )   (  ) )   ) \n"
-                     "(__(__)___(__)__) (\n";
+                     "(__(__)___(__)__) (\n" << COLOR_RESET << std::endl;
         }        
 
         frameToggle = !frameToggle; //toggles frames
@@ -164,30 +181,30 @@ void CatCleaning(int numFrames, int frameDelay) {
         std::cout << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(frameDelay));
     
-    } std::cout << "Your cat is all clean!\n";
+    };
 }
 
 void catded() {
         static bool frameToggle = true;
         if (frameToggle) {
         // Displaying cat ASCII art!
-        std::cout << "                      \n"        
+        std::cout << COLOR_RED << "                      \n"        
                      "    /\\_____/\\    \n"
                      "   /  X   X  \\     \n"
                      "  ( ==  ^  == )  _\n"
                      "   )         (  ( (\n"
                      "  (           )  ) ) \n"
                      " ( (  )   (  ) )  ( \n"
-                     "(__(__)___(__)__)  )\n";
+                     "(__(__)___(__)__)  )\n" << COLOR_RESET <<  std::endl;
         } else {
-        std::cout << "                     \n"
+        std::cout << COLOR_BOLD << "                     \n"
                      "    /\\_____/\\    \n"
                      "   /  X   X  \\        \n"
                      "  ( ==  ^  == )  _\n"
                      "   )         (  ( (\n"
                      "  (           )  ) ) \n"
                      " ( (  )   (  ) )  ( \n"
-                     "(__(__)___(__)__) )\n";
+                     "(__(__)___(__)__) )\n" << COLOR_RESET << std::endl;
         }        
 
         frameToggle = !frameToggle; //toggles frames
@@ -246,6 +263,7 @@ void DogSprite(int numFrames, int frameDelay) {
     
     };
 }
+
 void dogMunch() {
         static bool frameToggle = true;
         if (frameToggle) {
@@ -282,7 +300,7 @@ void DogEating(int numFrames, int frameDelay) {
         std::cout << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(frameDelay));
     
-    } std::cout << "You fed your dog yummy bones!\n";
+    };
 }
 
 
@@ -320,9 +338,45 @@ void DogSleeping(int numFrames, int frameDelay) {
         std::cout << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(frameDelay));
     
-    } std::cout << "Your dog slept all night!\n";
+    };
 }
 
+void dogDed() {
+        static bool frameToggle = true;
+        if (frameToggle) {
+        // Displaying dog ASCII art!
+        std::cout << "          _                 \n"
+                     "        /   \\         \n"
+                     "       / x x|\\                   \n"
+                     "      (_\\   |_)         _   \n"
+                     "      |  \\y'------___  | |   \n"
+                     "      |             `--' |    \n"
+                     " ___/__      ___/  |___.'     \n"
+                     "(_/(____/___(_____/           ";
+        } else {
+        std::cout << "          _               \n"
+                     "        /   \\         \n"
+                     "       / x x|\\             \n"
+                     "      (_\\   |_)         _   \n"
+                     "      |  \\y'------___  | |   \n"
+                     "      |             `--' |    \n"
+                     " ___/__      ___/  |___.'     \n"
+                     "(_/(____/___(_____/           ";
+        }        
+
+        frameToggle = !frameToggle; //toggles frames
+
+    }
+
+void DogDied(int numFrames, int frameDelay) {
+    for (int i = 0; i < numFrames; ++i) {
+        clearScreen();
+        dogDed();
+        std::cout << std::endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(frameDelay));
+    
+    };
+}
 
 
 //Frog Sprites
@@ -395,7 +449,7 @@ void FrogEating(int numFrames, int frameDelay) {
         std::cout << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(frameDelay));
     
-    } std::cout << "You fed your frog yummy flies!\n";
+    };
 }
 
 
@@ -403,23 +457,24 @@ void frogSnooze() {
         static bool frameToggle = true;
         if (frameToggle) {
         // Displaying dog ASCII art!
-        std::cout << "                              \n"
+        std::cout << COLOR_DARK_GREY << COLOR_BOLD << "                              \n"
                      "         _   _   Z     \n"
                      "        (-)_(-) Z       \n"
                      "     _ (   _   ) _    \n"
                      "    / \\/`-----'\\/ \\   \n"
                      "  __\\ ( (     ) ) /__ \n"
                      "  )   /\\ \\._./ /\\   ( \n"
-                     "   )_/ /|\\   /|\\ \\_(    ";
+                     "   )_/ /|\\   /|\\ \\_(    " << COLOR_RESET << std::endl;
         } else {
-        std::cout << "                  Z            \n"
+        std::cout << COLOR_BOLD <<
+                     "                  Z            \n"
                      "         _   _   Z         \n"
                      "        (-)_(-)       \n"
                      "     _ (   _   ) _    \n"
                      "    / \\/`-----'\\/ \\   \n"
                      "  __\\ ( (     ) ) /__ \n"
                      "  )   /\\ \\._./ /\\   ( \n"
-                     "   )_/ /|\\   /|\\ \\_(    ";
+                     "   )_/ /|\\   /|\\ \\_(    " << COLOR_RESET << std::endl;
         }        
 
         frameToggle = !frameToggle; //toggles frames
@@ -433,30 +488,32 @@ void FrogSleeping(int numFrames, int frameDelay) {
         std::cout << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(frameDelay));
     
-    } std::cout << "Your pet slept all night!\n";
+    };
 }
 
 void frogShower() {
         static bool frameToggle = true;
         if (frameToggle) {
         // Displaying dog ASCII art!
-        std::cout << "         ⸯ       ⸯ        ⸯ    ⸯ  \n"
+        std::cout << COLOR_BROWN<< COLOR_BOLD<<
+                     "         ⸯ       ⸯ        ⸯ    ⸯ  \n"
                      "ⸯ       ⸯ _   _    ⸯ    \n"
                      " ⸯ    ⸯ  (-)_(-)  ribbit  ⸯ     \n"
                      "ⸯ   ⸯ _ (   _   ) _    \n"
                      "    / \\/`-----'\\/ \\   \n"
                      "  __\\ ( (     ) ) /__ \n"
                      "  )   /\\ \\._./ /\\   ( \n"
-                     "   )_/ /|\\   /|\\ \\_(    ";
+                     "   )_/ /|\\   /|\\ \\_(    "<< COLOR_RESET << std::endl;
         } else {
-        std::cout << "   ˚         ⟡     ˚    ⟡     \n"
+        std::cout << COLOR_BLUE << COLOR_BOLD <<
+                     "   ˚         ⟡     ˚    ⟡     \n"
                      "    ⟡  ˚ _   _     ribbit       \n"
                      "        (.)_(.)   ⟡    ˚ \n"
                      "  ⟡  _ (   _   ) _    \n"
                      "    / \\/`-----'\\/ \\⟡   \n"
                      "˚ __\\ ( (     ) ) /__ \n"
                      "  )   /\\ \\._./ /\\   ( \n"
-                     "   )_/ /|\\   /|\\ \\_(    ";
+                     "   )_/ /|\\   /|\\ \\_(    " COLOR_RESET << std::endl;
         }        
 
         frameToggle = !frameToggle; //toggles frames
@@ -470,9 +527,43 @@ void FrogCleaning(int numFrames, int frameDelay) {
         std::cout << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(frameDelay));
     
-    } std::cout << "Your pet is all clean!\n";
+    };
 }
 
+void frogDed() {
+        static bool frameToggle = true;
+        if (frameToggle) {
+        // Displaying dog ASCII art!
+        std::cout << "         _   _           \n"
+                     "        (x)_(x)       \n"
+                     "     _ (   _   ) _    \n"
+                     "    / \\/`-----'\\/ \\   \n"
+                     "  __\\ ( (     ) ) /__ \n"
+                     "  )   /\\ \\._./ /\\   ( \n"
+                     "   )_/ /|\\   /|\\ \\_(    ";
+        } else {
+        std::cout << "         _   _       \n"
+                     "        (x)_(x)       \n"
+                     "     _ (   _   ) _    \n"
+                     "    / \\/`-----'\\/ \\   \n"
+                     "  __\\ ( (     ) ) /__ \n"
+                     "  )   /\\ \\._./ /\\   ( \n"
+                     "   )_/ /|\\   /|\\ \\_(    ";
+        }        
+
+        frameToggle = !frameToggle; //toggles frames
+
+    }
+
+void FrogDied(int numFrames, int frameDelay) {
+    for (int i = 0; i < numFrames; ++i) {
+        clearScreen();
+        frogDed();
+        std::cout << std::endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(frameDelay));
+    
+    };
+}
 
 
 
@@ -480,11 +571,6 @@ void FrogCleaning(int numFrames, int frameDelay) {
 //TESTING CODE
 
 
-
-int main() { ///CODE THAT WILL BE USED IN MAIN CODE
-    std::string foodChoice;                            //could be userChoice and then individually doing the eating, sleeping, cleaning, individualy
-    std::cout << "Feed you pet? Yes or no?" << std::endl;
-    std::cin >> foodChoice;                             //use tolower to make sure its no issues arise
 
 //int main() { ///CODE THAT WILL BE USED IN MAIN CODE
     //std::string foodChoice;                            //could be userChoice and then individually doing the eating, sleeping, cleaning, individualy
@@ -500,77 +586,27 @@ int main() { ///CODE THAT WILL BE USED IN MAIN CODE
     //std::cin >> washChoice; 
 
 
-if (foodChoice == "yes") {
-
-if (foodChoice == "yes") {
-    CatEating(5, 500);
+//if (foodChoice == "yes") {
+    //CatEating(5, 500);
     //DogEating(5, 500);
     //FrogEating(5, 500);
     
-} else {
-    CatSprite(5, 500);
-    //DogSprite(6, 500);
-    //FrogSprite(6, 500);
-    std::cout << "You choose not to feed your pet." << std::endl;
-}
-
-//if (sleepChoice == "yes") {
-    //CatSleeping(6, 500); 
-    //DogSleeping(6, 500);
-//    FrogSleeping(6, 500);   
-//} else{
-    //CatSprite(6, 500);
-    //DogSprite(6, 500);
-    //FrogSprite(6, 500);
-//    std::cout << "Your pet did not go to sleep." << std::endl;
-//}
-
-//if (washChoice == "yes") {
-    //CatCleaning(6, 500); 
-    //DogCleaning(6, 500);
-    //FrogCleaning(6, 500);   
-//} else{
-    //CatSprite(6, 500);
-    //DogSprite(6, 500);
-    //FrogSprite(6, 500);
-//    std::cout << "Your pet did not get clean." << std::endl;
-//}
-
-
-return 0;
-}
-
-
-
-
-
-if (foodChoice == "yes") {
-
-    //CatEating(5, 500);
-    DogEating(5, 500);
-    //FrogEating(5, 500);
-    
-} else {
+//} else {
     //CatSprite(5, 500);
-    DogSprite(6, 500);
+    //DogSprite(6, 500);
     //FrogSprite(6, 500);
-
-    std::cout << "You choose not to feed your pet." << std::endl;
-}
-
     //std::cout << "You choose not to feed your pet." << std::endl;
 //}
 
-
 //if (sleepChoice == "yes") {
     //CatSleeping(6, 500); 
     //DogSleeping(6, 500);
-//    FrogSleeping(6, 500);   
+    //FrogSleeping(6, 500);   
 //} else{
     //CatSprite(6, 500);
     //DogSprite(6, 500);
     //FrogSprite(6, 500);
-//    std::cout << "Your pet did not go to sleep." << std::endl;
+    //std::cout << "Your pet did not go to sleep." << std::endl;
 //}
 
 //if (washChoice == "yes") {
@@ -585,8 +621,28 @@ if (foodChoice == "yes") {
 //}
 
 
-return 0;
-}
+//return 0;
+//}
+
+
+
+
+
+
+//if (washChoice == "yes") {
+    //CatCleaning(6, 500); 
+    //DogCleaning(6, 500);
+    //FrogCleaning(6, 500);   
+//} else{
+    //CatSprite(6, 500);
+    //DogSprite(6, 500);
+    //FrogSprite(6, 500);
+    //std::cout << "Your pet did not get clean." << std::endl;
+//}
+
+
+//return 0;
+//}
 
 
 
