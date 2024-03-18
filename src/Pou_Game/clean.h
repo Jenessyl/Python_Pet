@@ -2,4 +2,4 @@
 #include "bars.h"
 #include <string>
 
-void clean_action(std::string petName, Bars &petBars);
+void clean_action(std::string petName, Bars &petBars, char animal);

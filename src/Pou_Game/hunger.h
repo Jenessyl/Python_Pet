@@ -2,4 +2,4 @@
 #include "bars.h"
 #include <string>
 
-void feed(std::string petName, Bars &petBars);  
+void feed(std::string petName, Bars &petBars, char animal);

@@ -3,8 +3,8 @@
 class Bars {
 
 public:
-  Bars(int health = 100, int happiness = 0, int hunger = 50, int sleep = 50,
-       int hygiene = 50);
+  Bars(int health = 100, int happiness = 0, int hunger = 60, int sleep = 60,
+       int hygiene = 60);
 
   // getter functions for each bar
   int getHealth();

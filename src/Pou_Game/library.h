@@ -2,6 +2,9 @@
  * Project III: Start here.
  */
 #pragma once
+#include "cat_functions.h"
+#include "dog_functions.h"
+#include "frog_functions.h"
 #include <string>
 
 #define COLOR_BROWN "\e[38;5;130m"
@@ -22,6 +25,5 @@
 #define W COLOR_WHITE
 
 void color_text(std::string my_text, char my_color);
-void displayWin(std::string petName, std::string day);
-void displayDeath(std::string petName, std::string day);
-
+void displayWin(std::string petName, std::string day, char animal);
+void displayDeath(std::string petName, std::string day, char animal);

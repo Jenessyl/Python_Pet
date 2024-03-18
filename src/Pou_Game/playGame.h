@@ -1,6 +1,7 @@
 #pragma once
-#include <iostream>
 #include "bars.h"
+#include <iostream>
 #include <string>
 
-void playGame(std::string name, Bars &petBar, int lowVal = 0, int highVal = 10, int numGuesses = 0);
+void playGame(std::string name, Bars &petBar, int lowVal = 0, int highVal = 10,
+              int numGuesses = 0);

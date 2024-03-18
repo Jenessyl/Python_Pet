@@ -1,15 +1,28 @@
+#include "clean.h"
 #include "bars.h"
 #include "library.h"
-#include "clean.h"
 #include <ctime>
 #include <iostream>
 
 // This function ativates the clean action
-void clean_action(std::string petName, Bars &petBars) {
+
+void clean_action(std::string petName, Bars &petBars, char animal) {
+
+  switch (animal) {
+  case 'a':
+    dogDisplayCleaning();
+    break;
+  case 'b':
+    catDisplayCleaning();
+    break;
+  case 'c':
+    frogDisplayCleaning();
+    break;
+  }
+
   color_text("〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰", 'C');
   color_text("🛁 IT IS BATHTIME! 🛁", 'C');
   color_text("〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰", 'C');
-  // show sprite of bathtime
 
   // Generating a random scenario
   int ScenarioNum;

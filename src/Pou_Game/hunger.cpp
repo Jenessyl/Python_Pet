@@ -1,15 +1,27 @@
+#include "hunger.h"
 #include "bars.h"
 #include "library.h"
-#include "hunger.h"
-#include <iostream>
 #include <ctime>
+#include <iostream>
 
 // This function ativates the feed action
-void feed(std::string petName, Bars &petBars) {
+void feed(std::string petName, Bars &petBars, char animal) {
+
+  switch (animal) {
+  case 'a':
+    dogDisplayEating();
+    break;
+  case 'b':
+    catDisplayEating();
+    break;
+  case 'c':
+    frogDisplayEating();
+    break;
+  }
+
   color_text("〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰", 'C');
   color_text("🍗  IT IS FEEDING TIME! 🍗", 'C');
   color_text("〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰", 'C');
-  // show sprite of bathtime
 
   // Generating a random scenario
   int ScenarioNum;
@@ -41,8 +53,7 @@ void feed(std::string petName, Bars &petBars) {
     break;
 
   case 2:
-    std::cout << "Oh no! " << petName << " choked on their snack!"
-              << std::endl;
+    std::cout << "Oh no! " << petName << " choked on their snack!" << std::endl;
     petBars.increaseHungerPoints(10);
     petBars.decreaseHygienePoints(5);
     petBars.decreaseHealthPoints(15);

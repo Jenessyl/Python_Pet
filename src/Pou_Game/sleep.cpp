@@ -6,12 +6,23 @@
 #include <iostream>
 #include <string>
 
-void sleep(std::string pet, Bars &petBars) {
+void sleep(std::string pet, Bars &petBars, char animal) {
+
+  switch (animal) {
+  case 'a':
+    dogDisplaySleeping();
+    break;
+  case 'b':
+    catDisplaySleeping();
+    break;
+  case 'c':
+    frogDisplaySleeping();
+    break;
+  }
+
   color_text("〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰", 'C');
   color_text("🌙  GOODNIGHT! TIME FOR BED! 🌙", 'B');
   color_text("〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰", 'C');
-
-  // sprite
 
   // chooses a random integer from 1-4 that corresponds to sleep activity
   int randomNumber;
@@ -75,6 +86,7 @@ void sleep(std::string pet, Bars &petBars) {
   std::cout << std::endl;
 }
 
+// // Sleeping cenario testing
 // int main() {
 //   std::string name1 = "POU";
 //   Bars bar1;
@@ -105,9 +117,6 @@ void sleep(std::string pet, Bars &petBars) {
 //   sleep(name5, bar5);
 //   std::cout << "\nAfter sleeping, " << name5 << "'s current status:\n";
 //   bar5.barStatus();
-
-// 3,1,2,0 is the order is the order it follows with  srand(time(NULL)) (27)
-// commented out; when in use it is truly random
 
 //   return 0;
 // }
