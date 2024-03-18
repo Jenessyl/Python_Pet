@@ -1,80 +1,74 @@
-#include "sleep.h"
 #include "bars.h"
 #include "library.h"
-
+#include <chrono>
+#include <cstdlib>
 #include <ctime>
 #include <iostream>
+#include <ostream>
 #include <string>
+#include <thread>
 
-void sleep(std::string pet, Bars &petBars, char animal) {
+void sleep(std::string pet, Bars &petBars) {
+  color_text("〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰", 'C');
+  color_text("\n   ᶻ 𝗓 𐰁  Goodnight! IT IS TIME FOR BED! ᶻ 𝗓 𐰁    \n", 'B');
+  color_text("〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰", 'C');
 
-  switch (animal) {
-  case 'a':
-    dogDisplaySleeping();
-    break;
-  case 'b':
-    catDisplaySleeping();
-    break;
-  case 'c':
-    frogDisplaySleeping();
-    break;
+  //   include the sleeping sprite, sleep progress can be replaced by sprites
+
+  int sleepProgress = 0;
+  while (sleepProgress < 100) {
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    sleepProgress += 25;
+    std::cout << "Sleeping... Progress: " << sleepProgress << "%" << std::endl;
   }
-
-  color_text("〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰", 'C');
-  color_text("🌙  GOODNIGHT! TIME FOR BED! 🌙", 'B');
-  color_text("〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰", 'C');
 
   // chooses a random integer from 1-4 that corresponds to sleep activity
   int randomNumber;
+  srand(time(NULL));
   randomNumber = (rand() % 5);
 
   switch (randomNumber) {
   case 0:
-    std::cout << pet << " had a great night of sleep!" << std::endl;
-    petBars.increaseHealthPoints(15);
+    std::cout
+        << "\n"
+        << pet
+        << " had a great night of sleep!\n====================================="
+        << std::endl;
+    petBars.increaseHealthPoints(5);
     petBars.increaseSleepPoints(25);
-    petBars.decreaseHungerPoints(10);
-    petBars.decreaseHygienePoints(5);
 
     color_text("Health +5", 'G');
     color_text("Sleep +25", 'G');
-    color_text("Hunger -10", 'R');
-    color_text("Hygiene -5", 'R');
 
     break;
   case 1:
-    std::cout << pet << " is feeling well rested!" << std::endl;
-    petBars.increaseHealthPoints(30);
+    std::cout << "\n"
+              << pet
+              << " is feeling well rested!\n============================="
+              << std::endl;
+    petBars.increaseHealthPoints(5);
     petBars.increaseSleepPoints(10);
-    petBars.decreaseHungerPoints(10);
-    petBars.decreaseHygienePoints(5);
     color_text("Health +5", 'G');
-    color_text("Sleep +10", 'G');
-    color_text("Hunger -10", 'R');
-    color_text("Hygiene -5", 'R');
+    color_text("Sleep +25", 'G');
 
     break;
   case 2:
-    std::cout << pet << "'s sleep was not very restful." << std::endl;
-    petBars.increaseHealthPoints(10);
-    petBars.increaseSleepPoints(10);
-    petBars.decreaseHungerPoints(15);
-    petBars.decreaseHygienePoints(5);
-    color_text("Sleep +10", 'G');
-    color_text("Hunger -15", 'R');
-    color_text("Hygiene -5", 'R');
+    std::cout
+        << "\n"
+        << pet
+        << "'s sleep was not very restful. Oh no!\n============================"
+        << std::endl;
+    petBars.decreaseSleepPoints(10);
+    color_text("Sleep +5", 'G');
     break;
   case 3:
-    std::cout << pet
+    std::cout << "\n"
+              << pet
               << " was tossing & turning all "
-                 "night."
+                 "night.\n===================================="
               << std::endl;
-    petBars.increaseSleepPoints(5);
-    petBars.decreaseHungerPoints(20);
-    petBars.decreaseHungerPoints(10);
-    color_text("Sleep +5", 'G');
-    color_text("Hunger -20", 'R');
-    color_text("Hygiene -10", 'R');
+    petBars.decreaseSleepPoints(10);
+    color_text("Sleep -10", 'R');
     break;
   }
 
@@ -86,7 +80,6 @@ void sleep(std::string pet, Bars &petBars, char animal) {
   std::cout << std::endl;
 }
 
-// Sleeping cenario testing
 // int main() {
 //   std::string name1 = "POU";
 //   Bars bar1;
@@ -117,6 +110,9 @@ void sleep(std::string pet, Bars &petBars, char animal) {
 //   sleep(name5, bar5);
 //   std::cout << "\nAfter sleeping, " << name5 << "'s current status:\n";
 //   bar5.barStatus();
+
+// 3,1,2,0 is the order is the order it follows with  srand(time(NULL)) (27)
+// commented out; when in use it is truly random
 
 //   return 0;
 // }
