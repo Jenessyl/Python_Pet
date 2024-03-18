@@ -3,7 +3,7 @@
  */
 #include <string>
 #include <iostream>
-#include <string>
+#include "library.h"
 
 #define COLOR_BROWN "\e[38;5;130m"
 #define COLOR_RED "\033[31m"
@@ -12,6 +12,7 @@
 #define COLOR_BLUE "\033[94m"
 #define COLOR_CYAN "\e[0;36m"
 #define COLOR_WHITE "\033[0m"
+#define COLOR_MAGENTA "\e[0;35m"
 
 #define H COLOR_BROWN
 #define R COLOR_RED

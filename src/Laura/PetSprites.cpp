@@ -92,7 +92,7 @@ void catMunch() {
 
 
 
-void CatEating(int numFrames, int frameDelay) {
+void CatEating(int numFrames , int frameDelay) {
     for (int i = 0; i < numFrames; ++i) {
         clearScreen();
         catMunch();

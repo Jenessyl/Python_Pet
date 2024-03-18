@@ -85,11 +85,11 @@ void Bars::increasePoints(int amount) {
 
 // reports the current status of each bar
 void Bars::barStatus() {
-  std::cout << "Health: " << health << std::endl
-            << "Happiness: " << happiness << std::endl
+  std::cout << "Happiness: " << happiness << std::endl
+            << "Health: " << health << std::endl
             << "Hunger: " << hunger << std::endl
             << "Sleep: " << sleep << std::endl
-            << "Hygiene: " << hygiene << std::endl ;
+            << "Hygiene: " << hygiene << std::endl;
 }
 
 void Bars::decreaseHealthPoints(int amount) {
@@ -161,7 +161,6 @@ void Bars::increaseHygienePoints(int amount) {
     hygiene = MAX;
   }
 }
-
 
 // int main() {
 //     // Create an instance of the Bars class

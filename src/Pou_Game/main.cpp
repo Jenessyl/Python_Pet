@@ -1,10 +1,12 @@
 /**
  * Project III: Start here.
  */
-// #include "library.cpp"
-#include "game_loop.cpp"
 #include <iostream>
 #include <string>
+#include "game_loop.h"
+#include "library.h"
+
+//IMPORTANT: run "g++ *.cpp -o main" then "./main" to play
 
 int main() {
   // Print the menu for pet selection

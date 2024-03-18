@@ -1,14 +1,18 @@
-
 #include <string>
-#include "Action_Functions/hunger.cpp" //temporary
-#include "low_stats_check.cpp"
+#include "hunger.h"
+#include "clean.h"
+#include "playGame.h"
+#include "sleep.h"
+#include "game_loop.h"
+#include "library.h"
+#include "bars.h"
+#include "low_stats_check.h"
 
 
 void game_loop(std::string petName) {
     bool outerFlag = true;
     int day = 1;
     int moves;
-    int affection = 0;
     bool deathFlag = false;
     char actionChoice;
     Bars petBars;
@@ -19,8 +23,7 @@ void game_loop(std::string petName) {
         std::string CombinedString1 = "DAY " + std::to_string(day);
         color_text(CombinedString1, 'B');
         
-        //Display Bar values
-        petBars.barStatus();
+
 
         // std::cout << "affection " << affection << std::endl;
         std::cout << "" << std::endl;
@@ -28,6 +31,10 @@ void game_loop(std::string petName) {
         
         //Action selection
         while (moves > 0) {
+          //Display Bar values
+          petBars.barStatus();
+          std::cout << std::endl;
+
           color_text("What would would you like to do?", 'Y');
           std::string CombinedString2 = "Amount of moves left: " + std::to_string(moves);
           color_text(CombinedString2, 'Y');
@@ -48,31 +55,38 @@ void game_loop(std::string petName) {
             } else {
                 switch(actionChoice) {
                     case 'a':
-                        // call play function  
+                        // call play function
+                        color_text("〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰", 'C');
+                        color_text("👾 🕹️ WELCOME TO THE GUESSING GAME! 🕹️ 👾", 'G');
+                        color_text("〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰", 'C');  
+
+                        playGame(petName, petBars, 0, 10, 0);
+
+                        std::cout << std::endl;
+                        petBars.increaseHappinessPoints(5);
+                        color_text("❥ " + petName + " thanks you for playing with it ❥", 'C');
+                        color_text("Happiness +5", 'G');
+                        std::cout << std::endl;
+
                         actionFlag = false;  
-                        moves -= 1;
-                        affection += 25;        
+                        moves -= 1;     
                         break;
 
                     case 'b':
-                        // call feed function 
-                        feed(petName);
+                        feed(petName, petBars);
                         actionFlag = false;
-                        moves -= 1;
-                        affection += 25;             
+                        moves -= 1;           
                         break;
 
                     case 'c':
                         clean_action(petName, petBars);                      actionFlag = false; 
-                        moves -= 1;
-                        affection += 25;                               
+                        moves -= 1;                           
                         break;
 
                     case 'd':
-                        // call sleep function    
+                        sleep(petName, petBars);  
                         actionFlag = false;
-                        moves -= 1;
-                        affection += 25;         
+                        moves -= 1;        
                         break;
 
                     default:
@@ -80,9 +94,8 @@ void game_loop(std::string petName) {
                 }//switch end
             }//else end
           } while (actionFlag == true);
+        low_stats_check(petName, petBars);
         }//Daily end
-
-    low_stats_check(petName, petBars);
 
     day += 1;
     

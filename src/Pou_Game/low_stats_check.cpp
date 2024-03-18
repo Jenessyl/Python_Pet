@@ -1,16 +1,18 @@
-#include "Action_Functions/clean.cpp"
+#include "low_stats_check.h"
+#include "library.h"
+#include <string>
 
 void low_stats_check(std::string petName, Bars &petBars) {
-  if (petBars.getHunger() <= 30) {
-    petBars.decreaseHealthPoints(5);
+  if (petBars.getHunger() <= 40) {
+    petBars.decreaseHealthPoints(10);
     color_text(petName + " is starving! -5 Health", 'R');
   }
-  if (petBars.getHygiene() <= 30) {
-    petBars.decreaseHealthPoints(5);
+  if (petBars.getHygiene() <= 40) {
+    petBars.decreaseHealthPoints(10);
     color_text(petName + " is filty! -5 Health", 'R');
   }
-  if (petBars.getSleep() <= 30) {
-    petBars.decreaseHealthPoints(5);
+  if (petBars.getSleep() <= 40) {
+    petBars.decreaseHealthPoints(10);
     color_text(petName + " is so tired! -5 Health", 'R');
   }
 }
