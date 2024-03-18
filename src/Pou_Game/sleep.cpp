@@ -86,7 +86,7 @@ void sleep(std::string pet, Bars &petBars, char animal) {
   std::cout << std::endl;
 }
 
-// // Sleeping cenario testing
+// Sleeping cenario testing
 // int main() {
 //   std::string name1 = "POU";
 //   Bars bar1;
