@@ -215,15 +215,3 @@ void catDisplayDied(int numFrames, int frameDelay) {
     std::this_thread::sleep_for(std::chrono::milliseconds(frameDelay));
   };
 }
-
-// // CAT TEST SPRITES
-// int main() {
-
-//   catDisplayNormal();
-//   catDisplayEating();
-//   catDisplayCleaning();
-//   catDisplaySleeping();
-//   catDisplayDied();
-
-//   return 0;
-// }

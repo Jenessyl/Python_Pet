@@ -34,32 +34,32 @@ int main() {
       color_text("INVALID ENTRY: VALID INPUTS INCLUDE \"a\", \"b\", or \"c\"",
                  'R');
       std::cout << std::endl;
-    }
+    } else {
+      switch (petChoice) {
+      case 'a':
+        color_text("Enter the name of your pet: ", 'Y');
+        std::cin >> petName;
+        petType = 'a';
+        intro_flag = false;
+        break;
 
-    switch (petChoice) {
-    case 'a':
-      color_text("Enter the name of your pet: ", 'Y');
-      std::cin >> petName;
-      petType = 'a';
-      intro_flag = false;
-      break;
+      case 'b':
+        color_text("Enter the name of your pet: ", 'Y');
+        std::cin >> petName;
+        petType = 'b';
+        intro_flag = false;
+        break;
 
-    case 'b':
-      color_text("Enter the name of your pet: ", 'Y');
-      std::cin >> petName;
-      petType = 'b';
-      intro_flag = false;
-      break;
+      case 'c':
+        color_text("Enter the name of your pet: ", 'Y');
+        std::cin >> petName;
+        petType = 'c';
+        intro_flag = false;
+        break;
 
-    case 'c':
-      color_text("Enter the name of your pet: ", 'Y');
-      std::cin >> petName;
-      petType = 'c';
-      intro_flag = false;
-      break;
-
-    default:
-      break;
+      default:
+        break;
+      }
     }
   } while (intro_flag == true);
 

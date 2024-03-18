@@ -6,14 +6,6 @@
 void playGame(std::string name, Bars &petBars, int lowVal, int highVal,
               int numGuesses) {
 
-  // // include this in game loop before calling this function since it is
-  // recursive and will print each time
-  // color_text("〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰", 'C');
-  // color_text("🕹️ 👾 WELCOME TO THE GUESSING GAME! 🕹️ 👾", 'G');
-  // color_text("〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰〰", 'C');
-
-  // show sprite of pet playing a game
-
   if (numGuesses == 3) {
     color_text("==============================================", 'C');
     color_text("Sorry, you've exhausted all your guesses.", 'Y');
@@ -54,21 +46,4 @@ void playGame(std::string name, Bars &petBars, int lowVal, int highVal,
   } else {
     playGame(name, petBars, midVal + 1, highVal, numGuesses + 1);
   }
-
-  // Happiness will increase after the game: since its recursive it will print
-  // for each call, but it should only happen once so include this in the game
-  // loop after calling this function
-  //  std::cout << std::endl;
-  //  petBar.increaseHappinessPoints(5);
-  //  color_text("❥ " + name + " thanks you for playing with it ❥", 'C');
-  //  color_text("Happiness +5", 'G');
-  //  std::cout << std::endl;
 }
-
-// int main() {
-//     std::string name = "sally";
-//     Bars bar;
-//     playGame(name, bar);
-
-//     return 0;
-// }

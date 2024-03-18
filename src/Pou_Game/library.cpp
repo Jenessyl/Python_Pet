@@ -16,7 +16,6 @@
 #define COLOR_BLUE "\033[94m"
 #define COLOR_CYAN "\e[0;36m"
 #define COLOR_WHITE "\033[0m"
-#define COLOR_MAGENTA "\e[0;35m"
 
 #define H COLOR_BROWN
 #define R COLOR_RED
@@ -26,8 +25,7 @@
 #define C COLOR_CYAN
 #define W COLOR_WHITE
 
-// takes text and desired color (R,Y,G,B) as arguments and outputs colored text
-// (Input text will have an endl attached once printed)
+// takes text and desired color (R,Y,G,B,H) as arguments and outputs colored text (NOTE: Input text will have an endl attached once printed)
 void color_text(std::string my_text, char my_color) {
   std::string colored_string, colored_set;
 
@@ -134,10 +132,3 @@ void displayDeath(std::string petName, std::string day, char animal) {
   color_text("❖ You were not meant to be a pet owner ❖", 'R');
 }
 
-// //displayWin & displayDeath test
-// int main() {
-//     displayWin("Tony", "7", 'a');
-//     std::cout << std::endl;
-//     displayDeath("Tony", "7", 'a');
-//     return 0;
-// }

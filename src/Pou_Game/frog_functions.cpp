@@ -198,15 +198,3 @@ void frogDisplayDied(int numFrames, int frameDelay) {
     std::this_thread::sleep_for(std::chrono::milliseconds(frameDelay));
   };
 }
-
-// // FROG TEST SPRITES
-// int main() {
-
-//   frogDisplayNormal();
-//   frogDisplayEating();
-//   frogDisplayCleaning();
-//   frogDisplaySleeping();
-//   frogDisplayDied();
-
-//   return 0;
-// }

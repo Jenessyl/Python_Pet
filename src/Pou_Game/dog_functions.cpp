@@ -215,15 +215,3 @@ void dogDisplayDied(int numFrames, int frameDelay) {
     std::this_thread::sleep_for(std::chrono::milliseconds(frameDelay));
   };
 }
-
-// // DOG TEST SPRITES
-// int main() {
-
-//   dogDisplayNormal();
-//   dogDisplayEating();
-//   dogDisplayCleaning();
-//   dogDisplaySleeping();
-//   dogDisplayDied();
-
-//   return 0;
-// }
